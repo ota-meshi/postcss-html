@@ -1,17 +1,15 @@
-PostCSS HTML Syntax
-====
+# PostCSS HTML Syntax
 
-[![NPM version](https://img.shields.io/npm/v/postcss-html.svg?style=flat-square)](https://www.npmjs.com/package/postcss-html)
-[![Travis](https://img.shields.io/travis/gucong3000/postcss-html.svg)](https://travis-ci.org/gucong3000/postcss-html)
-[![Travis](https://img.shields.io/travis/gucong3000/postcss-syntaxes.svg?label=integration)](https://travis-ci.org/gucong3000/postcss-syntaxes)
-[![Codecov](https://img.shields.io/codecov/c/github/gucong3000/postcss-html.svg)](https://codecov.io/gh/gucong3000/postcss-html)
-[![David](https://img.shields.io/david/gucong3000/postcss-html.svg)](https://david-dm.org/gucong3000/postcss-html)
+[![NPM version](https://img.shields.io/npm/v/@ota-meshi/postcss-html.svg?style=flat-square)](https://www.npmjs.com/package/@ota-meshi/postcss-html)
+
+**This project started as a fork of [postcss-html](https://github.com/gucong3000/postcss-html).**
 
 <img align="right" width="95" height="95"
-	title="Philosopher’s stone, logo of PostCSS"
-	src="http://postcss.github.io/postcss/logo.svg">
+ title="Philosopher’s stone, logo of PostCSS"
+ src="http://postcss.github.io/postcss/logo.svg">
 
 [PostCSS](https://github.com/postcss/postcss) syntax for parsing HTML (and HTML-like)
+
 - [PHP](http://php.net)
 - [Vue Single-File Component](https://vue-loader.vuejs.org/spec.html)
 - [Quick App](https://doc.quickapp.cn/framework/source-file.html)
@@ -21,8 +19,8 @@ PostCSS HTML Syntax
 
 First thing's first, install the module:
 
-```
-npm install postcss-syntax postcss-html --save-dev
+```bash
+npm install @ota-meshi/postcss-html --save-dev
 ```
 
 If you want support SCSS/SASS/LESS/SugarSS syntax, you need to install the corresponding module.
@@ -36,17 +34,17 @@ If you want support SCSS/SASS/LESS/SugarSS syntax, you need to install the corre
 
 ```js
 const postcss = require('postcss');
-const syntax = require('postcss-html')({
-	// syntax for parse scss (non-required options)
-	scss: require('postcss-scss'),
-	// syntax for parse less (non-required options)
-	less: require('postcss-less'),
-	// syntax for parse css blocks (non-required options)
-	css: require('postcss-safe-parser'),
+const syntax = require('@ota-meshi/postcss-html')({
+ // syntax for parse scss (non-required options)
+ scss: require('postcss-scss'),
+ // syntax for parse less (non-required options)
+ less: require('postcss-less'),
+ // syntax for parse css blocks (non-required options)
+ css: require('postcss-safe-parser'),
 });
 postcss(plugins).process(source, { syntax: syntax }).then(function (result) {
-	// An alias for the result.css property. Use it with syntaxes that generate non-CSS output.
-	result.content
+ // An alias for the result.css property. Use it with syntaxes that generate non-CSS output.
+ result.content
 });
 ```
 

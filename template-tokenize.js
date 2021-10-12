@@ -1,16 +1,15 @@
 "use strict";
+
 const tokenize = require("postcss/lib/tokenize");
 
-function templateTokenize () {
-	const tokenizer = tokenize.apply(this, arguments);
+function templateTokenize(...args) {
+	const tokenizer = tokenize(...args);
 
-	function nextToken () {
+	function nextToken() {
 		const args = arguments;
 		const returned = [];
-		let token;
+		let token, line, column;
 		let depth = 0;
-		let line;
-		let column;
 
 		while ((token = tokenizer.nextToken.apply(tokenizer, args))) {
 			if (token[0] !== "word") {
@@ -32,7 +31,7 @@ function templateTokenize () {
 		if (returned.length) {
 			token = [
 				"word",
-				returned.map(token => token[1]).join(""),
+				returned.map((token) => token[1]).join(""),
 				returned[0][2],
 				returned[0][3],
 				line,
@@ -41,6 +40,7 @@ function templateTokenize () {
 		}
 		return token;
 	}
+
 	return Object.assign({}, tokenizer, {
 		nextToken,
 	});

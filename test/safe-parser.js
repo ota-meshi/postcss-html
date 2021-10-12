@@ -10,9 +10,10 @@ describe("postcss-safe-parser", () => {
 		}).parse(
 			[
 				"<template>",
-				"\t<span style=\"color:{{notice.color}};font-size:{{notice.font_size}}px\" for=\"{{(index,notice) in showModalData.notice}}\">{{notice.txt}}</span>",
+				'\t<span style="color:{{notice.color}};font-size:{{notice.font_size}}px" for="{{(index,notice) in showModalData.notice}}">{{notice.txt}}</span>',
 				"</template>",
-			].join("\n"), {
+			].join("\n"),
+			{
 				from: "quickapp.ux",
 			}
 		);
@@ -20,7 +21,7 @@ describe("postcss-safe-parser", () => {
 		expect(document.nodes).to.have.lengthOf(1);
 		const root = document.first;
 		expect(root.nodes).to.have.lengthOf(2);
-		root.nodes.forEach(node => {
+		root.nodes.forEach((node) => {
 			expect(node).to.have.property("type", "decl");
 		});
 

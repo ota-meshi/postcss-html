@@ -12,71 +12,83 @@ describe("vue tests", () => {
 				overrideBrowserslist: ["Chrome >= 1"],
 				cascade: false,
 			}),
-		]).process([
-			"<style module=\"style\">",
-			".red {",
-			"  color: red;",
-			"}",
-			"@keyframes fade {",
-			"  from { opacity: 1; } to { opacity: 0; }",
-			"}",
-			".animate {",
-			"  animation: fade 1s;",
-			"}",
-			"</style>",
-			"<style scoped lang=\"sugarss\" module>",
-			".red",
-			"  color: red",
-			"</style>",
-			"<script lang='coffee'>",
-			"should skip coffeescript)))",
-			"</script>",
-		].join("\n"), {
-			syntax,
-			from: "autoprefixer.vue",
-		}).then(result => {
-			expect(result.content).to.equal([
-				"<style module=\"style\">",
-				".red {",
-				"  color: red;",
-				"}",
-				"@-webkit-keyframes fade {",
-				"  from { opacity: 1; } to { opacity: 0; }",
-				"}",
-				"@keyframes fade {",
-				"  from { opacity: 1; } to { opacity: 0; }",
-				"}",
-				".animate {",
-				"  -webkit-animation: fade 1s;",
-				"  animation: fade 1s;",
-				"}",
-				"</style>",
-				"<style scoped lang=\"sugarss\" module>",
-				".red",
-				"  color: red",
-				"</style>",
-				"<script lang='coffee'>",
-				"should skip coffeescript)))",
-				"</script>",
-			].join("\n"));
-		});
+		])
+			.process(
+				[
+					'<style module="style">',
+					".red {",
+					"  color: red;",
+					"}",
+					"@keyframes fade {",
+					"  from { opacity: 1; } to { opacity: 0; }",
+					"}",
+					".animate {",
+					"  animation: fade 1s;",
+					"}",
+					"</style>",
+					'<style scoped lang="sugarss" module>',
+					".red",
+					"  color: red",
+					"</style>",
+					"<script lang='coffee'>",
+					"should skip coffeescript)))",
+					"</script>",
+				].join("\n"),
+				{
+					syntax,
+					from: "autoprefixer.vue",
+				}
+			)
+			.then((result) => {
+				expect(result.content).to.equal(
+					[
+						'<style module="style">',
+						".red {",
+						"  color: red;",
+						"}",
+						"@-webkit-keyframes fade {",
+						"  from { opacity: 1; } to { opacity: 0; }",
+						"}",
+						"@keyframes fade {",
+						"  from { opacity: 1; } to { opacity: 0; }",
+						"}",
+						".animate {",
+						"  -webkit-animation: fade 1s;",
+						"  animation: fade 1s;",
+						"}",
+						"</style>",
+						'<style scoped lang="sugarss" module>',
+						".red",
+						"  color: red",
+						"</style>",
+						"<script lang='coffee'>",
+						"should skip coffeescript)))",
+						"</script>",
+					].join("\n")
+				);
+			});
 	});
 	it("vue with empty <style>", () => {
-		return postcss().process([
-			"<style module=\"style\"></style>",
-			"<style scoped lang=\"stylus\" module>",
-			"</style>",
-			"<style src=\"./style.css\"></style>",
-		].join("\n"), {
-			syntax,
-			from: "empty.vue",
-		}).then(result => {
-			expect(result.root.nodes).to.have.lengthOf(2);
-		});
+		return postcss()
+			.process(
+				[
+					'<style module="style"></style>',
+					'<style scoped lang="stylus" module>',
+					"</style>",
+					'<style src="./style.css"></style>',
+				].join("\n"),
+				{
+					syntax,
+					from: "empty.vue",
+				}
+			)
+			.then((result) => {
+				expect(result.root.nodes).to.have.lengthOf(2);
+			});
 	});
 	it("vue with lang(s)", () => {
 		const vue = [
-			"<style lang=\"scss?outputStyle=expanded\">",
+			'<style lang="scss?outputStyle=expanded">',
 			"//sass style",
 			"//-----------------------------------",
 			"$fontStack:    Helvetica, sans-serif;",
@@ -87,7 +99,7 @@ describe("vue tests", () => {
 			"  color: $primaryColor;",
 			"}",
 			"</style>",
-			"<style lang=\"less\">",
+			'<style lang="less">',
 			"@base: #f938ab;",
 
 			".box-shadow(@style, @c) when (iscolor(@c)) {",

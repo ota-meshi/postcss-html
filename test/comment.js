@@ -30,9 +30,9 @@ describe("html tests", () => {
 		const html = [
 			"<html>",
 			"<!-- postcss-disable -->",
-			"<a style=\"color: red;\"></a>",
+			'<a style="color: red;"></a>',
 			"<!-- postcss-enable -->",
-			"<a style=\"color: red;\"></a>",
+			'<a style="color: red;"></a>',
 			"<!-- comment -->",
 			"</html>",
 		].join("\n");

@@ -9,7 +9,8 @@ describe("template interpolation", () => {
 			[
 				"<a style=\"color: #<?php echo '000' ?>;font-size:<?php echo '12' ?>px\">",
 				"</a>",
-			].join("\n"), {
+			].join("\n"),
+			{
 				from: "quickapp.ux",
 			}
 		);
@@ -30,9 +31,10 @@ describe("template interpolation", () => {
 	it("EJS", () => {
 		const document = syntax.parse(
 			[
-				"<a style=\"color: #<%= user.color %>;font-size:<%= user.size %>px\">",
+				'<a style="color: #<%= user.color %>;font-size:<%= user.size %>px">',
 				"</a>",
-			].join("\n"), {
+			].join("\n"),
+			{
 				from: "quickapp.ux",
 			}
 		);
@@ -54,10 +56,11 @@ describe("template interpolation", () => {
 		const document = syntax.parse(
 			[
 				"<template>",
-				"\t<span style=\"color:#{{notice.color}};font-size:{{notice.font_size}}px\" for=\"{{(index,notice) in showModalData.notice}}\">{{notice.txt}}</span>",
-				"<style module=\"style\"></style>",
+				'\t<span style="color:#{{notice.color}};font-size:{{notice.font_size}}px" for="{{(index,notice) in showModalData.notice}}">{{notice.txt}}</span>',
+				'<style module="style"></style>',
 				"</template>",
-			].join("\n"), {
+			].join("\n"),
+			{
 				from: "quickapp.ux",
 			}
 		);
@@ -68,7 +71,7 @@ describe("template interpolation", () => {
 
 		const root = document.first;
 		expect(root.nodes).to.have.lengthOf(2);
-		root.nodes.forEach(node => {
+		root.nodes.forEach((node) => {
 			expect(node).to.have.property("type", "decl");
 		});
 
@@ -83,10 +86,11 @@ describe("template interpolation", () => {
 		const document = syntax.parse(
 			[
 				"<template>",
-				"\t<span style=\"color:#{{notice.color}};font-size:{{notice.font_size}}px\" for=\"{{(index,notice) in showModalData.notice}}\">{{notice.txt}}</span>",
-				"<style module=\"style\"></style>",
+				'\t<span style="color:#{{notice.color}};font-size:{{notice.font_size}}px" for="{{(index,notice) in showModalData.notice}}">{{notice.txt}}</span>',
+				'<style module="style"></style>',
 				"</template>",
-			].join("\n"), {
+			].join("\n"),
+			{
 				from: "vue-sfc.vue",
 			}
 		);
@@ -97,7 +101,7 @@ describe("template interpolation", () => {
 
 		const root = document.first;
 		expect(root.nodes).to.have.lengthOf(2);
-		root.nodes.forEach(node => {
+		root.nodes.forEach((node) => {
 			expect(node).to.have.property("type", "decl");
 		});
 
@@ -110,10 +114,8 @@ describe("template interpolation", () => {
 
 	it("Svelte", () => {
 		const document = syntax.parse(
-			[
-				"<a style=\"display: { dynamicProperties }\">",
-				"</a>",
-			].join("\n"), {
+			['<a style="display: { dynamicProperties }">', "</a>"].join("\n"),
+			{
 				from: "quickapp.ux",
 			}
 		);
@@ -121,7 +123,7 @@ describe("template interpolation", () => {
 		expect(document.first.source).to.have.property("lang", "custom-template");
 		const root = document.first;
 		expect(root.nodes).to.have.lengthOf(1);
-		root.nodes.forEach(node => {
+		root.nodes.forEach((node) => {
 			expect(node).to.have.property("type", "decl");
 		});
 		expect(root.first).to.have.property("prop", "display");

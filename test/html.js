@@ -19,14 +19,14 @@ describe("html tests", () => {
 		const html = [
 			"<html>",
 			"<head>",
-			"<style type=\"text/less\">",
+			'<style type="text/less">',
 			"a {",
 			"\tdisplay: flex;",
 			"}",
 			"</style>",
 			"</head>",
 			"<body>",
-			"<div style=\"font-family: serif, serif;\">",
+			'<div style="font-family: serif, serif;">',
 			"</div>",
 			"</body>",
 			"</html>",
@@ -55,22 +55,26 @@ describe("html tests", () => {
 					selector: "b",
 				});
 			},
-		]).process(html, {
-			syntax: syntax,
-			from: "append.html",
-		}).then(result => {
-			expect(result.root.source).to.haveOwnProperty("lang", "html");
-			expect(result.content).to.equal([
-				"<html>",
-				"<style>",
-				"a {",
-				"\tdisplay: flex;",
-				"}",
-				"b {}",
-				"</style>",
-				"</html>",
-			].join("\n"));
-		});
+		])
+			.process(html, {
+				syntax,
+				from: "append.html",
+			})
+			.then((result) => {
+				expect(result.root.source).to.haveOwnProperty("lang", "html");
+				expect(result.content).to.equal(
+					[
+						"<html>",
+						"<style>",
+						"a {",
+						"\tdisplay: flex;",
+						"}",
+						"b {}",
+						"</style>",
+						"</html>",
+					].join("\n")
+				);
+			});
 	});
 
 	it("stringify for prepend node", () => {
@@ -89,22 +93,26 @@ describe("html tests", () => {
 					selector: "b",
 				});
 			},
-		]).process(html, {
-			syntax: syntax,
-			from: "prepend.html",
-		}).then(result => {
-			expect(result.root.source).to.haveOwnProperty("lang", "html");
-			expect(result.content).to.equal([
-				"<html>",
-				"<style>",
-				"b {}",
-				"a {",
-				"\tdisplay: flex;",
-				"}",
-				"</style>",
-				"</html>",
-			].join("\n"));
-		});
+		])
+			.process(html, {
+				syntax,
+				from: "prepend.html",
+			})
+			.then((result) => {
+				expect(result.root.source).to.haveOwnProperty("lang", "html");
+				expect(result.content).to.equal(
+					[
+						"<html>",
+						"<style>",
+						"b {}",
+						"a {",
+						"\tdisplay: flex;",
+						"}",
+						"</style>",
+						"</html>",
+					].join("\n")
+				);
+			});
 	});
 
 	it("stringify for insertBefore node", () => {
@@ -128,28 +136,32 @@ describe("html tests", () => {
 					selector: "b",
 				});
 			},
-		]).process(html, {
-			syntax: syntax,
-			from: "insertBefore.html",
-		}).then(result => {
-			expect(result.root.source).to.haveOwnProperty("lang", "html");
-			expect(result.content).to.equal([
-				"<html>",
-				"<style>",
-				"b {}",
-				"a {",
-				"\tdisplay: flex;",
-				"}",
-				"</style>",
-				"<style>",
-				"b {}",
-				"a {",
-				"\tdisplay: flex;",
-				"}",
-				"</style>",
-				"</html>",
-			].join("\n"));
-		});
+		])
+			.process(html, {
+				syntax,
+				from: "insertBefore.html",
+			})
+			.then((result) => {
+				expect(result.root.source).to.haveOwnProperty("lang", "html");
+				expect(result.content).to.equal(
+					[
+						"<html>",
+						"<style>",
+						"b {}",
+						"a {",
+						"\tdisplay: flex;",
+						"}",
+						"</style>",
+						"<style>",
+						"b {}",
+						"a {",
+						"\tdisplay: flex;",
+						"}",
+						"</style>",
+						"</html>",
+					].join("\n")
+				);
+			});
 	});
 
 	it("stringify for insertAfter node", () => {
@@ -173,28 +185,32 @@ describe("html tests", () => {
 					selector: "b",
 				});
 			},
-		]).process(html, {
-			syntax: syntax,
-			from: "insertAfter.html",
-		}).then(result => {
-			expect(result.root.source).to.haveOwnProperty("lang", "html");
-			expect(result.content).to.equal([
-				"<html>",
-				"<style>",
-				"a {",
-				"\tdisplay: flex;",
-				"}",
-				"b {}",
-				"</style>",
-				"<style>",
-				"a {",
-				"\tdisplay: flex;",
-				"}",
-				"b {}",
-				"</style>",
-				"</html>",
-			].join("\n"));
-		});
+		])
+			.process(html, {
+				syntax,
+				from: "insertAfter.html",
+			})
+			.then((result) => {
+				expect(result.root.source).to.haveOwnProperty("lang", "html");
+				expect(result.content).to.equal(
+					[
+						"<html>",
+						"<style>",
+						"a {",
+						"\tdisplay: flex;",
+						"}",
+						"b {}",
+						"</style>",
+						"<style>",
+						"a {",
+						"\tdisplay: flex;",
+						"}",
+						"b {}",
+						"</style>",
+						"</html>",
+					].join("\n")
+				);
+			});
 	});
 
 	it("stringify for unshift node", () => {
@@ -211,21 +227,25 @@ describe("html tests", () => {
 			function (root) {
 				root.nodes.unshift(postcss.parse("b {}"));
 			},
-		]).process(html, {
-			syntax: syntax,
-			from: "unshift.html",
-		}).then(result => {
-			expect(result.root.source).to.haveOwnProperty("lang", "html");
-			expect(result.content).to.equal([
-				"<html>",
-				"<style>",
-				"b {}a {",
-				"\tdisplay: flex;",
-				"}",
-				"</style>",
-				"</html>",
-			].join("\n"));
-		});
+		])
+			.process(html, {
+				syntax,
+				from: "unshift.html",
+			})
+			.then((result) => {
+				expect(result.root.source).to.haveOwnProperty("lang", "html");
+				expect(result.content).to.equal(
+					[
+						"<html>",
+						"<style>",
+						"b {}a {",
+						"\tdisplay: flex;",
+						"}",
+						"</style>",
+						"</html>",
+					].join("\n")
+				);
+			});
 	});
 
 	it("stringify for push node", () => {
@@ -240,49 +260,47 @@ describe("html tests", () => {
 		].join("\n");
 
 		return postcss([
-			root => {
+			(root) => {
 				root.nodes.push(postcss.parse("b {}"));
 			},
-		]).process(html, {
-			syntax: syntax,
-			from: "push.html",
-		}).then(result => {
-			expect(result.root.source).to.haveOwnProperty("lang", "html");
-			expect(result.content).to.equal([
-				"<html>",
-				"<style>",
-				"a {",
-				"\tdisplay: flex;",
-				"}b {}",
-				"</style>",
-				"</html>",
-			].join("\n"));
-		});
+		])
+			.process(html, {
+				syntax,
+				from: "push.html",
+			})
+			.then((result) => {
+				expect(result.root.source).to.haveOwnProperty("lang", "html");
+				expect(result.content).to.equal(
+					[
+						"<html>",
+						"<style>",
+						"a {",
+						"\tdisplay: flex;",
+						"}b {}",
+						"</style>",
+						"</html>",
+					].join("\n")
+				);
+			});
 	});
 
 	it("stringify for nodes array", () => {
-		const html = [
-			"<html>",
-			"<style>",
-			"</style>",
-			"</html>",
-		].join("\n");
+		const html = ["<html>", "<style>", "</style>", "</html>"].join("\n");
 		return postcss([
-			root => {
+			(root) => {
 				root.nodes = [postcss.parse("b {}")];
 			},
-		]).process(html, {
-			syntax: syntax,
-			from: "push.html",
-		}).then(result => {
-			expect(result.root.source).to.haveOwnProperty("lang", "html");
-			expect(result.content).to.equal([
-				"<html>",
-				"<style>",
-				"b {}</style>",
-				"</html>",
-			].join("\n"));
-		});
+		])
+			.process(html, {
+				syntax,
+				from: "push.html",
+			})
+			.then((result) => {
+				expect(result.root.source).to.haveOwnProperty("lang", "html");
+				expect(result.content).to.equal(
+					["<html>", "<style>", "b {}</style>", "</html>"].join("\n")
+				);
+			});
 	});
 
 	it("<style> tag in last line", () => {
