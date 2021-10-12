@@ -3,7 +3,7 @@
 const TemplateSafeParser = require("./template-safe-parser");
 const Input = require("postcss/lib/input");
 
-function templateSafeParse (css, opts) {
+function templateSafeParse(css, opts) {
 	const input = new Input(css, opts);
 
 	const parser = new TemplateSafeParser(input);
@@ -11,4 +11,5 @@ function templateSafeParse (css, opts) {
 
 	return parser.root;
 }
+
 module.exports = templateSafeParse;

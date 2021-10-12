@@ -28,14 +28,15 @@ H1 {
 </xsl:template>
 </xsl:stylesheet>
 		`;
-		return postcss([
-		]).process(xml, {
-			syntax: syntax,
-			from: "XSLT.xsl",
-		}).then(result => {
-			expect(result.root.nodes).to.be.lengthOf(2);
-			expect(result.root.first.nodes).to.be.lengthOf(1);
-			expect(result.root.last.nodes).to.be.lengthOf(2);
-		});
+		return postcss([])
+			.process(xml, {
+				syntax,
+				from: "XSLT.xsl",
+			})
+			.then((result) => {
+				expect(result.root.nodes).to.be.lengthOf(2);
+				expect(result.root.first.nodes).to.be.lengthOf(1);
+				expect(result.root.last.nodes).to.be.lengthOf(2);
+			});
 	});
 });

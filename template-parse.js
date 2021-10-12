@@ -3,7 +3,7 @@
 const TemplateParser = require("./template-parser");
 const Input = require("postcss/lib/input");
 
-function templateParse (css, opts) {
+function templateParse(css, opts) {
 	const input = new Input(css, opts);
 
 	const parser = new TemplateParser(input);
@@ -11,4 +11,5 @@ function templateParse (css, opts) {
 
 	return parser.root;
 }
+
 module.exports = templateParse;
