@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/@ota-meshi/postcss-html.git"
+    "url": "git+https://github.com/ota-meshi/postcss-html.git"
   },
   "keywords": [
     "postcss",
@@ -36,9 +36,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/@ota-meshi/postcss-html/issues"
+    "url": "https://github.com/ota-meshi/postcss-html/issues"
   },
-  "homepage": "https://github.com/@ota-meshi/postcss-html#readme",
+  "homepage": "https://github.com/ota-meshi/postcss-html#readme",
   "nyc": {
     "reporter": [
       "lcov",
