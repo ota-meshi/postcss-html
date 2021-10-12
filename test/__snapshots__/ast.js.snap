@@ -2,6 +2,39 @@
 
 exports[`AST tests test.html ast 1`] = `
 Object {
+  "inputs": Array [
+    Object {
+      "css": "			a {
+				display: flex;
+			}
+",
+      "file": "/test.html",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "font-family: serif serif",
+      "file": "/test.html",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "<!DOCTYPE html>
+<html>
+	<head>
+		<style type=\\"text/css\\">
+			a {
+				display: flex;
+			}
+		</style>
+	</head>
+	<body>
+		<div style=\\"font-family: serif serif\\"></div>
+	</body>
+</html>
+",
+      "file": "/test.html",
+      "hasBOM": false,
+    },
+  ],
   "nodes": Array [
     Object {
       "document": "$document",
@@ -23,18 +56,13 @@ Object {
                 "end": Object {
                   "column": 18,
                   "line": 6,
+                  "offset": 24,
                 },
-                "input": Input {
-                  "css": "			a {
-				display: flex;
-			}
-",
-                  "file": "/test.html",
-                  "hasBOM": false,
-                },
+                "inputId": 0,
                 "start": Object {
                   "column": 5,
                   "line": 6,
+                  "offset": 11,
                 },
               },
               "type": "decl",
@@ -53,18 +81,13 @@ Object {
             "end": Object {
               "column": 4,
               "line": 7,
+              "offset": 29,
             },
-            "input": Input {
-              "css": "			a {
-				display: flex;
-			}
-",
-              "file": "/test.html",
-              "hasBOM": false,
-            },
+            "inputId": 0,
             "start": Object {
               "column": 4,
               "line": 5,
+              "offset": 3,
             },
           },
           "type": "rule",
@@ -81,23 +104,12 @@ Object {
         "semicolon": false,
       },
       "source": Object {
-        "inline": false,
-        "input": Input {
-          "css": "			a {
-				display: flex;
-			}
-",
-          "file": "/test.html",
-          "hasBOM": false,
-        },
-        "lang": "css",
+        "end": undefined,
+        "inputId": 0,
         "start": Object {
           "column": 1,
           "line": 5,
-        },
-        "syntax": Object {
-          "parse": [Function],
-          "stringify": [Function],
+          "offset": 0,
         },
       },
       "type": "root",
@@ -117,15 +129,13 @@ Object {
             "end": Object {
               "column": 38,
               "line": 11,
+              "offset": 23,
             },
-            "input": Input {
-              "css": "font-family: serif serif",
-              "file": "/test.html",
-              "hasBOM": false,
-            },
+            "inputId": 0,
             "start": Object {
               "column": 15,
               "line": 11,
+              "offset": 0,
             },
           },
           "type": "decl",
@@ -141,20 +151,12 @@ Object {
         "semicolon": false,
       },
       "source": Object {
-        "inline": true,
-        "input": Input {
-          "css": "font-family: serif serif",
-          "file": "/test.html",
-          "hasBOM": false,
-        },
-        "lang": "css",
+        "end": undefined,
+        "inputId": 0,
         "start": Object {
           "column": 15,
           "line": 11,
-        },
-        "syntax": Object {
-          "parse": [Function],
-          "stringify": [Function],
+          "offset": 0,
         },
       },
       "type": "root",
@@ -167,29 +169,8 @@ Object {
 ",
   },
   "source": Object {
-    "input": Input {
-      "css": "<!DOCTYPE html>
-<html>
-	<head>
-		<style type=\\"text/css\\">
-			a {
-				display: flex;
-			}
-		</style>
-	</head>
-	<body>
-		<div style=\\"font-family: serif serif\\"></div>
-	</body>
-</html>
-",
-      "file": "/test.html",
-      "hasBOM": false,
-    },
-    "lang": "html",
-    "opts": Object {
-      "from": "/test.html",
-      "syntax": [Function],
-    },
+    "end": undefined,
+    "inputId": 0,
     "start": Object {
       "column": 1,
       "line": 1,
@@ -201,30 +182,9 @@ Object {
 
 exports[`AST tests test.vue ast 1`] = `
 Object {
-  "nodes": Array [
+  "inputs": Array [
     Object {
-      "document": "$document",
-      "indexes": Object {},
-      "lastEach": 1,
-      "nodes": Array [
-        Object {
-          "indexes": Object {},
-          "lastEach": 1,
-          "nodes": Array [
-            Object {
-              "prop": "color",
-              "raws": Object {
-                "before": "
-  ",
-                "between": ": ",
-              },
-              "source": Object {
-                "end": Object {
-                  "column": 29,
-                  "line": 37,
-                },
-                "input": Input {
-                  "css": ".add-button {
+      "css": ".add-button {
   color: v-bind(buttonColor);
   pointer-events: v-bind(\\"inputValue ? 'initial' : 'none'\\");
 }
@@ -239,469 +199,10 @@ Object {
   color: #fff;
 }
 ",
-                  "file": "/test.vue",
-                  "hasBOM": false,
-                },
-                "start": Object {
-                  "column": 3,
-                  "line": 37,
-                },
-              },
-              "type": "decl",
-              "value": "v-bind(buttonColor)",
-            },
-            Object {
-              "prop": "pointer-events",
-              "raws": Object {
-                "before": "
-  ",
-                "between": ": ",
-              },
-              "source": Object {
-                "end": Object {
-                  "column": 60,
-                  "line": 38,
-                },
-                "input": Input {
-                  "css": ".add-button {
-  color: v-bind(buttonColor);
-  pointer-events: v-bind(\\"inputValue ? 'initial' : 'none'\\");
-}
-.todo-list {
-  list-style: none;
-}
-.todo-item {
-  background-color: #eef;
-}
-.todo-item--done {
-  background-color: #3fb983;
-  color: #fff;
-}
-",
-                  "file": "/test.vue",
-                  "hasBOM": false,
-                },
-                "start": Object {
-                  "column": 3,
-                  "line": 38,
-                },
-              },
-              "type": "decl",
-              "value": "v-bind(\\"inputValue ? 'initial' : 'none'\\")",
-            },
-          ],
-          "raws": Object {
-            "after": "
-",
-            "before": "",
-            "between": " ",
-            "semicolon": true,
-          },
-          "selector": ".add-button",
-          "source": Object {
-            "end": Object {
-              "column": 1,
-              "line": 39,
-            },
-            "input": Input {
-              "css": ".add-button {
-  color: v-bind(buttonColor);
-  pointer-events: v-bind(\\"inputValue ? 'initial' : 'none'\\");
-}
-.todo-list {
-  list-style: none;
-}
-.todo-item {
-  background-color: #eef;
-}
-.todo-item--done {
-  background-color: #3fb983;
-  color: #fff;
-}
-",
-              "file": "/test.vue",
-              "hasBOM": false,
-            },
-            "start": Object {
-              "column": 1,
-              "line": 36,
-            },
-          },
-          "type": "rule",
-        },
-        Object {
-          "indexes": Object {},
-          "lastEach": 1,
-          "nodes": Array [
-            Object {
-              "prop": "list-style",
-              "raws": Object {
-                "before": "
-  ",
-                "between": ": ",
-              },
-              "source": Object {
-                "end": Object {
-                  "column": 19,
-                  "line": 41,
-                },
-                "input": Input {
-                  "css": ".add-button {
-  color: v-bind(buttonColor);
-  pointer-events: v-bind(\\"inputValue ? 'initial' : 'none'\\");
-}
-.todo-list {
-  list-style: none;
-}
-.todo-item {
-  background-color: #eef;
-}
-.todo-item--done {
-  background-color: #3fb983;
-  color: #fff;
-}
-",
-                  "file": "/test.vue",
-                  "hasBOM": false,
-                },
-                "start": Object {
-                  "column": 3,
-                  "line": 41,
-                },
-              },
-              "type": "decl",
-              "value": "none",
-            },
-          ],
-          "raws": Object {
-            "after": "
-",
-            "before": "
-",
-            "between": " ",
-            "semicolon": true,
-          },
-          "selector": ".todo-list",
-          "source": Object {
-            "end": Object {
-              "column": 1,
-              "line": 42,
-            },
-            "input": Input {
-              "css": ".add-button {
-  color: v-bind(buttonColor);
-  pointer-events: v-bind(\\"inputValue ? 'initial' : 'none'\\");
-}
-.todo-list {
-  list-style: none;
-}
-.todo-item {
-  background-color: #eef;
-}
-.todo-item--done {
-  background-color: #3fb983;
-  color: #fff;
-}
-",
-              "file": "/test.vue",
-              "hasBOM": false,
-            },
-            "start": Object {
-              "column": 1,
-              "line": 40,
-            },
-          },
-          "type": "rule",
-        },
-        Object {
-          "indexes": Object {},
-          "lastEach": 1,
-          "nodes": Array [
-            Object {
-              "prop": "background-color",
-              "raws": Object {
-                "before": "
-  ",
-                "between": ": ",
-              },
-              "source": Object {
-                "end": Object {
-                  "column": 25,
-                  "line": 44,
-                },
-                "input": Input {
-                  "css": ".add-button {
-  color: v-bind(buttonColor);
-  pointer-events: v-bind(\\"inputValue ? 'initial' : 'none'\\");
-}
-.todo-list {
-  list-style: none;
-}
-.todo-item {
-  background-color: #eef;
-}
-.todo-item--done {
-  background-color: #3fb983;
-  color: #fff;
-}
-",
-                  "file": "/test.vue",
-                  "hasBOM": false,
-                },
-                "start": Object {
-                  "column": 3,
-                  "line": 44,
-                },
-              },
-              "type": "decl",
-              "value": "#eef",
-            },
-          ],
-          "raws": Object {
-            "after": "
-",
-            "before": "
-",
-            "between": " ",
-            "semicolon": true,
-          },
-          "selector": ".todo-item",
-          "source": Object {
-            "end": Object {
-              "column": 1,
-              "line": 45,
-            },
-            "input": Input {
-              "css": ".add-button {
-  color: v-bind(buttonColor);
-  pointer-events: v-bind(\\"inputValue ? 'initial' : 'none'\\");
-}
-.todo-list {
-  list-style: none;
-}
-.todo-item {
-  background-color: #eef;
-}
-.todo-item--done {
-  background-color: #3fb983;
-  color: #fff;
-}
-",
-              "file": "/test.vue",
-              "hasBOM": false,
-            },
-            "start": Object {
-              "column": 1,
-              "line": 43,
-            },
-          },
-          "type": "rule",
-        },
-        Object {
-          "indexes": Object {},
-          "lastEach": 1,
-          "nodes": Array [
-            Object {
-              "prop": "background-color",
-              "raws": Object {
-                "before": "
-  ",
-                "between": ": ",
-              },
-              "source": Object {
-                "end": Object {
-                  "column": 28,
-                  "line": 47,
-                },
-                "input": Input {
-                  "css": ".add-button {
-  color: v-bind(buttonColor);
-  pointer-events: v-bind(\\"inputValue ? 'initial' : 'none'\\");
-}
-.todo-list {
-  list-style: none;
-}
-.todo-item {
-  background-color: #eef;
-}
-.todo-item--done {
-  background-color: #3fb983;
-  color: #fff;
-}
-",
-                  "file": "/test.vue",
-                  "hasBOM": false,
-                },
-                "start": Object {
-                  "column": 3,
-                  "line": 47,
-                },
-              },
-              "type": "decl",
-              "value": "#3fb983",
-            },
-            Object {
-              "prop": "color",
-              "raws": Object {
-                "before": "
-  ",
-                "between": ": ",
-              },
-              "source": Object {
-                "end": Object {
-                  "column": 14,
-                  "line": 48,
-                },
-                "input": Input {
-                  "css": ".add-button {
-  color: v-bind(buttonColor);
-  pointer-events: v-bind(\\"inputValue ? 'initial' : 'none'\\");
-}
-.todo-list {
-  list-style: none;
-}
-.todo-item {
-  background-color: #eef;
-}
-.todo-item--done {
-  background-color: #3fb983;
-  color: #fff;
-}
-",
-                  "file": "/test.vue",
-                  "hasBOM": false,
-                },
-                "start": Object {
-                  "column": 3,
-                  "line": 48,
-                },
-              },
-              "type": "decl",
-              "value": "#fff",
-            },
-          ],
-          "raws": Object {
-            "after": "
-",
-            "before": "
-",
-            "between": " ",
-            "semicolon": true,
-          },
-          "selector": ".todo-item--done",
-          "source": Object {
-            "end": Object {
-              "column": 1,
-              "line": 49,
-            },
-            "input": Input {
-              "css": ".add-button {
-  color: v-bind(buttonColor);
-  pointer-events: v-bind(\\"inputValue ? 'initial' : 'none'\\");
-}
-.todo-list {
-  list-style: none;
-}
-.todo-item {
-  background-color: #eef;
-}
-.todo-item--done {
-  background-color: #3fb983;
-  color: #fff;
-}
-",
-              "file": "/test.vue",
-              "hasBOM": false,
-            },
-            "start": Object {
-              "column": 1,
-              "line": 46,
-            },
-          },
-          "type": "rule",
-        },
-      ],
-      "raws": Object {
-        "after": "
-",
-        "beforeStart": "<template>
-  <input v-model=\\"inputValue\\" />
-  <button @click=\\"handleClick\\" class=\\"add-button\\">Add ToDo</button>
-  <ul class=\\"todo-list\\">
-    <li
-      v-for=\\"(todo, index) in todoItems\\"
-      :key=\\"todo.id\\"
-      class=\\"todo-item\\"
-      :class=\\"{ 'todo-item--done': todo.done }\\"
-      @click=\\"todo.done = !todo.done\\"
-    >
-      <span v-if=\\"todo.done\\">✓</span> {{ todo.text }}
-    </li>
-  </ul>
-</template>
-<script setup>
-import { ref, computed } from \\"vue\\"
-const inputValue = ref(\\"\\")
-const todoItems = ref([])
-
-function handleClick() {
-  todoItems.value.push({
-    id: Math.random().toString(36).slice(-8),
-    done: false,
-    text: inputValue.value,
-  })
-  inputValue.value = \\"\\"
-}
-
-const buttonColor = computed(() => (inputValue ? \\"black\\" : \\"white\\"));
-const buttonPointerEvents = computed(() =>
-  inputValue.value ? \\"initial\\" : \\"none\\"
-);
-</script>
-<style>
-",
-        "semicolon": false,
-      },
-      "source": Object {
-        "inline": false,
-        "input": Input {
-          "css": ".add-button {
-  color: v-bind(buttonColor);
-  pointer-events: v-bind(\\"inputValue ? 'initial' : 'none'\\");
-}
-.todo-list {
-  list-style: none;
-}
-.todo-item {
-  background-color: #eef;
-}
-.todo-item--done {
-  background-color: #3fb983;
-  color: #fff;
-}
-",
-          "file": "/test.vue",
-          "hasBOM": false,
-        },
-        "lang": "css",
-        "start": Object {
-          "column": 1,
-          "line": 36,
-        },
-        "syntax": Object {
-          "parse": [Function],
-          "stringify": [Function],
-        },
-      },
-      "type": "root",
+      "file": "/test.vue",
+      "hasBOM": false,
     },
-  ],
-  "raws": Object {
-    "afterEnd": "</style>
-",
-  },
-  "source": Object {
-    "input": Input {
+    Object {
       "css": "<template>
   <input v-model=\\"inputValue\\" />
   <button @click=\\"handleClick\\" class=\\"add-button\\">Add ToDo</button>
@@ -756,11 +257,327 @@ const buttonPointerEvents = computed(() =>
       "file": "/test.vue",
       "hasBOM": false,
     },
-    "lang": "html",
-    "opts": Object {
-      "from": "/test.vue",
-      "syntax": [Function],
+  ],
+  "nodes": Array [
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "indexes": Object {},
+          "lastEach": 1,
+          "nodes": Array [
+            Object {
+              "prop": "color",
+              "raws": Object {
+                "before": "
+  ",
+                "between": ": ",
+              },
+              "source": Object {
+                "end": Object {
+                  "column": 29,
+                  "line": 37,
+                  "offset": 42,
+                },
+                "inputId": 0,
+                "start": Object {
+                  "column": 3,
+                  "line": 37,
+                  "offset": 16,
+                },
+              },
+              "type": "decl",
+              "value": "v-bind(buttonColor)",
+            },
+            Object {
+              "prop": "pointer-events",
+              "raws": Object {
+                "before": "
+  ",
+                "between": ": ",
+              },
+              "source": Object {
+                "end": Object {
+                  "column": 60,
+                  "line": 38,
+                  "offset": 103,
+                },
+                "inputId": 0,
+                "start": Object {
+                  "column": 3,
+                  "line": 38,
+                  "offset": 46,
+                },
+              },
+              "type": "decl",
+              "value": "v-bind(\\"inputValue ? 'initial' : 'none'\\")",
+            },
+          ],
+          "raws": Object {
+            "after": "
+",
+            "before": "",
+            "between": " ",
+            "semicolon": true,
+          },
+          "selector": ".add-button",
+          "source": Object {
+            "end": Object {
+              "column": 1,
+              "line": 39,
+              "offset": 105,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 1,
+              "line": 36,
+              "offset": 0,
+            },
+          },
+          "type": "rule",
+        },
+        Object {
+          "indexes": Object {},
+          "lastEach": 1,
+          "nodes": Array [
+            Object {
+              "prop": "list-style",
+              "raws": Object {
+                "before": "
+  ",
+                "between": ": ",
+              },
+              "source": Object {
+                "end": Object {
+                  "column": 19,
+                  "line": 41,
+                  "offset": 138,
+                },
+                "inputId": 0,
+                "start": Object {
+                  "column": 3,
+                  "line": 41,
+                  "offset": 122,
+                },
+              },
+              "type": "decl",
+              "value": "none",
+            },
+          ],
+          "raws": Object {
+            "after": "
+",
+            "before": "
+",
+            "between": " ",
+            "semicolon": true,
+          },
+          "selector": ".todo-list",
+          "source": Object {
+            "end": Object {
+              "column": 1,
+              "line": 42,
+              "offset": 140,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 1,
+              "line": 40,
+              "offset": 107,
+            },
+          },
+          "type": "rule",
+        },
+        Object {
+          "indexes": Object {},
+          "lastEach": 1,
+          "nodes": Array [
+            Object {
+              "prop": "background-color",
+              "raws": Object {
+                "before": "
+  ",
+                "between": ": ",
+              },
+              "source": Object {
+                "end": Object {
+                  "column": 25,
+                  "line": 44,
+                  "offset": 179,
+                },
+                "inputId": 0,
+                "start": Object {
+                  "column": 3,
+                  "line": 44,
+                  "offset": 157,
+                },
+              },
+              "type": "decl",
+              "value": "#eef",
+            },
+          ],
+          "raws": Object {
+            "after": "
+",
+            "before": "
+",
+            "between": " ",
+            "semicolon": true,
+          },
+          "selector": ".todo-item",
+          "source": Object {
+            "end": Object {
+              "column": 1,
+              "line": 45,
+              "offset": 181,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 1,
+              "line": 43,
+              "offset": 142,
+            },
+          },
+          "type": "rule",
+        },
+        Object {
+          "indexes": Object {},
+          "lastEach": 1,
+          "nodes": Array [
+            Object {
+              "prop": "background-color",
+              "raws": Object {
+                "before": "
+  ",
+                "between": ": ",
+              },
+              "source": Object {
+                "end": Object {
+                  "column": 28,
+                  "line": 47,
+                  "offset": 229,
+                },
+                "inputId": 0,
+                "start": Object {
+                  "column": 3,
+                  "line": 47,
+                  "offset": 204,
+                },
+              },
+              "type": "decl",
+              "value": "#3fb983",
+            },
+            Object {
+              "prop": "color",
+              "raws": Object {
+                "before": "
+  ",
+                "between": ": ",
+              },
+              "source": Object {
+                "end": Object {
+                  "column": 14,
+                  "line": 48,
+                  "offset": 244,
+                },
+                "inputId": 0,
+                "start": Object {
+                  "column": 3,
+                  "line": 48,
+                  "offset": 233,
+                },
+              },
+              "type": "decl",
+              "value": "#fff",
+            },
+          ],
+          "raws": Object {
+            "after": "
+",
+            "before": "
+",
+            "between": " ",
+            "semicolon": true,
+          },
+          "selector": ".todo-item--done",
+          "source": Object {
+            "end": Object {
+              "column": 1,
+              "line": 49,
+              "offset": 246,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 1,
+              "line": 46,
+              "offset": 183,
+            },
+          },
+          "type": "rule",
+        },
+      ],
+      "raws": Object {
+        "after": "
+",
+        "beforeStart": "<template>
+  <input v-model=\\"inputValue\\" />
+  <button @click=\\"handleClick\\" class=\\"add-button\\">Add ToDo</button>
+  <ul class=\\"todo-list\\">
+    <li
+      v-for=\\"(todo, index) in todoItems\\"
+      :key=\\"todo.id\\"
+      class=\\"todo-item\\"
+      :class=\\"{ 'todo-item--done': todo.done }\\"
+      @click=\\"todo.done = !todo.done\\"
+    >
+      <span v-if=\\"todo.done\\">✓</span> {{ todo.text }}
+    </li>
+  </ul>
+</template>
+<script setup>
+import { ref, computed } from \\"vue\\"
+const inputValue = ref(\\"\\")
+const todoItems = ref([])
+
+function handleClick() {
+  todoItems.value.push({
+    id: Math.random().toString(36).slice(-8),
+    done: false,
+    text: inputValue.value,
+  })
+  inputValue.value = \\"\\"
+}
+
+const buttonColor = computed(() => (inputValue ? \\"black\\" : \\"white\\"));
+const buttonPointerEvents = computed(() =>
+  inputValue.value ? \\"initial\\" : \\"none\\"
+);
+</script>
+<style>
+",
+        "semicolon": false,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 1,
+          "line": 36,
+          "offset": 0,
+        },
+      },
+      "type": "root",
     },
+  ],
+  "raws": Object {
+    "afterEnd": "</style>
+",
+  },
+  "source": Object {
+    "end": undefined,
+    "inputId": 0,
     "start": Object {
       "column": 1,
       "line": 1,

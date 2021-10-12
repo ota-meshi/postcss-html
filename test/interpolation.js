@@ -116,7 +116,7 @@ describe("template interpolation", () => {
 		const document = syntax.parse(
 			['<a style="display: { dynamicProperties }">', "</a>"].join("\n"),
 			{
-				from: "quickapp.ux",
+				from: "app.svelte",
 			}
 		);
 		expect(document.nodes).to.have.lengthOf(1);
