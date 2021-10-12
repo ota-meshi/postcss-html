@@ -1,8 +1,8 @@
 # PostCSS HTML Syntax
 
-[![NPM version](https://img.shields.io/npm/v/@ota-meshi/postcss-html.svg?style=flat-square)](https://www.npmjs.com/package/@ota-meshi/postcss-html)
-
 **This project started as a fork of [postcss-html](https://github.com/gucong3000/postcss-html).**
+
+[![NPM version](https://img.shields.io/npm/v/@ota-meshi/postcss-html.svg?style=flat-square)](https://www.npmjs.com/package/@ota-meshi/postcss-html)
 
 <img align="right" width="95" height="95"
  title="Philosopher’s stone, logo of PostCSS"
