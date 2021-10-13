@@ -49,7 +49,7 @@
     "check-coverage": true
   },
   "scripts": {
-    "mocha": "mocha --no-timeouts",
+    "mocha": "mocha \"test/**/*.js\" --no-timeouts",
     "test": "nyc npm run mocha",
     "lint": "eslint .",
     "eslint-fix": "eslint . --fix",
@@ -82,6 +82,8 @@
     "postcss-scss": "^2.0.0",
     "postcss-styl": "^0.9.0",
     "prettier": "^2.4.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
     "sugarss": "^2.0.0"
   }
 }
