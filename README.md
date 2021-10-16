@@ -1,8 +1,11 @@
 # PostCSS HTML Syntax
 
-**This project started as a fork of [postcss-html](https://github.com/gucong3000/postcss-html).**
-
-[![NPM version](https://img.shields.io/npm/v/@ota-meshi/postcss-html.svg?style=flat-square)](https://www.npmjs.com/package/@ota-meshi/postcss-html)
+[![NPM license](https://img.shields.io/npm/l/postcss-html.svg)](https://www.npmjs.com/package/postcss-html)
+[![NPM version](https://img.shields.io/npm/v/postcss-html/next.svg?style=flat-square)](https://www.npmjs.com/package/postcss-html/v/next)
+[![NPM downloads](https://img.shields.io/npm/dw/postcss-html.svg)](http://www.npmtrends.com/postcss-html)
+[![NPM downloads](https://img.shields.io/npm/dm/postcss-html.svg)](http://www.npmtrends.com/postcss-html)
+[![NPM downloads](https://img.shields.io/npm/dy/postcss-html.svg)](http://www.npmtrends.com/postcss-html)
+[![Build Status](https://github.com/ota-meshi/postcss-html/workflows/CI/badge.svg?branch=master)](https://github.com/ota-meshi/postcss-html/actions?query=workflow%3ACI)
 
 <img align="right" width="95" height="95"
  title="Philosopher’s stone, logo of PostCSS"
@@ -20,7 +23,7 @@
 First thing's first, install the module:
 
 ```bash
-npm install @ota-meshi/postcss-html --save-dev
+npm install postcss-html --save-dev
 ```
 
 If you want support SCSS/SASS/LESS/SugarSS syntax, you need to install the corresponding module.
@@ -34,17 +37,17 @@ If you want support SCSS/SASS/LESS/SugarSS syntax, you need to install the corre
 
 ```js
 const postcss = require('postcss');
-const syntax = require('@ota-meshi/postcss-html')({
- // syntax for parse scss (non-required options)
- scss: require('postcss-scss'),
- // syntax for parse less (non-required options)
- less: require('postcss-less'),
- // syntax for parse css blocks (non-required options)
- css: require('postcss-safe-parser'),
+const syntax = require('postcss-html')({
+    // syntax for parse scss (non-required options)
+    scss: require('postcss-scss'),
+    // syntax for parse less (non-required options)
+    less: require('postcss-less'),
+    // syntax for parse css blocks (non-required options)
+    css: require('postcss-safe-parser'),
 });
 postcss(plugins).process(source, { syntax: syntax }).then(function (result) {
- // An alias for the result.css property. Use it with syntaxes that generate non-CSS output.
- result.content
+    // An alias for the result.css property. Use it with syntaxes that generate non-CSS output.
+    result.content
 });
 ```
 
@@ -57,7 +60,38 @@ If you want support SCSS/SASS/LESS/SugarSS syntax, you need to install these mod
 
 ## Advanced Use Cases
 
-See: [postcss-syntax](https://github.com/gucong3000/postcss-syntax)
+### Options
+
+```js
+const options = {
+    rules: [
+        {
+            // custom language for file extension
+            test: /\.postcss$/i,
+            lang: 'scss'
+        },
+        {
+            // custom language for file extension
+            test: /\.customcss$/i,
+            lang: 'custom'
+        },
+    ],
+
+    // custom parser for CSS (using `postcss-safe-parser`)
+    css: 'postcss-safe-parser',
+    // custom parser for SASS (PostCSS-compatible syntax.)
+    sass: require('postcss-sass'),
+    // custom parser for SCSS (by module name)
+    scss: 'postcss-scss',
+    // custom parser for LESS (by module path)
+    less: require.resolve('./node_modules/postcss-less'),
+    // custom parser for SugarSS
+    sugarss: require('sugarss'),
+    // custom parser for custom language
+    custom: require('postcss-custom-syntax'),
+}
+const syntax = require('postcss-html')(options);
+```
 
 ## Turning PostCSS off from within your HTML
 
@@ -71,6 +105,8 @@ PostCSS can be temporarily turned off by using special comments in your HTML. Fo
 <!-- postcss-enable -->
 ```
 
-## Style Transformations
+## Linting with Stylelint
 
-The main use case of this plugin is to apply PostCSS transformations to `<style>` tags and `<div style="*">` property in HTML (and HTML-like).
+The main use case of this plugin is to apply linting with [Stylelint] to `<style>` tags and `<div style="*">` property in HTML (and HTML-like).
+
+[Stylelint]: https://stylelint.io/
