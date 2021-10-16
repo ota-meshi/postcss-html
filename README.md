@@ -32,6 +32,7 @@ If you want support SCSS/SASS/LESS/SugarSS syntax, you need to install the corre
 - SASS: [postcss-sass](https://github.com/aleshaoleg/postcss-sass)
 - LESS: [postcss-less](https://github.com/shellscape/postcss-less)
 - SugarSS: [sugarss](https://github.com/postcss/sugarss)
+- Stylus: [postcss-styl](https://github.com/ota-meshi/postcss-styl)
 
 ## Use Cases
 
@@ -57,6 +58,7 @@ If you want support SCSS/SASS/LESS/SugarSS syntax, you need to install these mod
 - SASS: [postcss-sass](https://github.com/aleshaoleg/postcss-sass)
 - LESS: [postcss-less](https://github.com/shellscape/postcss-less)
 - SugarSS: [sugarss](https://github.com/postcss/sugarss)
+- Stylus: [postcss-styl](https://github.com/ota-meshi/postcss-styl)
 
 ## Advanced Use Cases
 
@@ -66,13 +68,13 @@ If you want support SCSS/SASS/LESS/SugarSS syntax, you need to install these mod
 const options = {
     rules: [
         {
-            // custom language for file extension
-            test: /\.postcss$/i,
+            // custom language
+            test: /^postcss$/i,
             lang: 'scss'
         },
         {
-            // custom language for file extension
-            test: /\.customcss$/i,
+            // custom language
+            test: /^customcss$/i,
             lang: 'custom'
         },
     ],
