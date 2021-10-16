@@ -1,8 +1,9 @@
 {
-  "name": "@ota-meshi/postcss-html",
+  "name": "postcss-html",
   "version": "1.0.0-alpha.1",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "tag": "next"
   },
   "description": "PostCSS syntax for parsing HTML (and HTML-like)",
   "engines": {
