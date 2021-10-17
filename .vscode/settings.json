@@ -8,6 +8,7 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
-  }
+    "source.fixAll.stylelint": false
+  },
+  "stylelint.enable": false
 }

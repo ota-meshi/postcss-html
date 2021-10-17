@@ -74,6 +74,30 @@ const buttonPointerEvents = computed(() =>
 "
 `;
 
+exports[`stylelint stylelint --fix with html test-with-stylus.vue 1`] = `
+"<template>
+  <div style=\\"display: flex;\\"/>
+</template>
+<script>
+</script>
+<style lang=\\"stylus\\">
+.add-button 
+  color red;
+
+
+.todo-list 
+  list-style none
+  background-color #eef
+
+  .todo-item--done {
+    background-color: #3fb983;
+    color: #fff;
+  }
+
+</style>
+"
+`;
+
 exports[`stylelint stylelint with html test.html 1`] = `
 Array [
   Object {
@@ -143,6 +167,109 @@ Array [
     "rule": "value-keyword-case",
     "severity": "error",
     "text": "Expected \\"buttonColor\\" to be \\"buttoncolor\\" (value-keyword-case)",
+  },
+]
+`;
+
+exports[`stylelint stylelint with html test-with-stylus.vue 1`] = `
+Array [
+  Object {
+    "column": 14,
+    "line": 8,
+    "rule": "block-closing-brace-newline-before",
+    "severity": "error",
+    "text": "Expected newline before \\"}\\" of a multi-line block (block-closing-brace-newline-before)",
+  },
+  Object {
+    "column": 5,
+    "line": 16,
+    "rule": "block-closing-brace-newline-before",
+    "severity": "error",
+    "text": "Expected newline before \\"}\\" of a multi-line block (block-closing-brace-newline-before)",
+  },
+  Object {
+    "column": 11,
+    "line": 7,
+    "rule": "block-opening-brace-space-before",
+    "severity": "error",
+    "text": "Expected single space before \\"{\\" (block-opening-brace-space-before)",
+  },
+  Object {
+    "column": 10,
+    "line": 9,
+    "rule": "block-opening-brace-space-before",
+    "severity": "error",
+    "text": "Expected single space before \\"{\\" (block-opening-brace-space-before)",
+  },
+  Object {
+    "column": 27,
+    "line": 2,
+    "rule": "declaration-block-trailing-semicolon",
+    "severity": "error",
+    "text": "Expected a trailing semicolon (declaration-block-trailing-semicolon)",
+  },
+  Object {
+    "column": 14,
+    "line": 8,
+    "rule": "declaration-block-trailing-semicolon",
+    "severity": "error",
+    "text": "Expected a trailing semicolon (declaration-block-trailing-semicolon)",
+  },
+  Object {
+    "column": 1,
+    "line": 9,
+    "rule": "rule-empty-line-before",
+    "severity": "error",
+    "text": "Expected empty line before rule (rule-empty-line-before)",
+  },
+  Object {
+    "column": 5,
+    "line": 8,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 2 spaces (indentation)",
+  },
+  Object {
+    "column": 5,
+    "line": 10,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 2 spaces (indentation)",
+  },
+  Object {
+    "column": 5,
+    "line": 11,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 2 spaces (indentation)",
+  },
+  Object {
+    "column": 5,
+    "line": 13,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 2 spaces (indentation)",
+  },
+  Object {
+    "column": 5,
+    "line": 16,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 2 spaces (indentation)",
+  },
+  Object {
+    "column": 9,
+    "line": 14,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 4 spaces (indentation)",
+  },
+  Object {
+    "column": 9,
+    "line": 15,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 4 spaces (indentation)",
   },
 ]
 `;

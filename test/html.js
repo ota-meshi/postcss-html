@@ -116,6 +116,21 @@ describe("html tests", () => {
 	});
 
 	it("stringify for insertBefore node", () => {
+		function insertBeforePlugin() {
+			return {
+				postcssPlugin: "insertBeforePlugin",
+				Root(root) {
+					root.insertBefore(
+						root.last,
+						postcss.rule({
+							selector: "b",
+						})
+					);
+				},
+			};
+		}
+
+		insertBeforePlugin.postcss = true;
 		const html = [
 			"<html>",
 			"<style>",
@@ -130,13 +145,7 @@ describe("html tests", () => {
 			"</style>",
 			"</html>",
 		].join("\n");
-		return postcss([
-			function (root) {
-				root.insertBefore(root.last, {
-					selector: "b",
-				});
-			},
-		])
+		return postcss([insertBeforePlugin])
 			.process(html, {
 				syntax,
 				from: "insertBefore.html",
@@ -147,12 +156,14 @@ describe("html tests", () => {
 					[
 						"<html>",
 						"<style>",
+						"",
 						"b {}",
 						"a {",
 						"\tdisplay: flex;",
 						"}",
 						"</style>",
 						"<style>",
+						"",
 						"b {}",
 						"a {",
 						"\tdisplay: flex;",
@@ -165,6 +176,21 @@ describe("html tests", () => {
 	});
 
 	it("stringify for insertAfter node", () => {
+		function insertAfterPlugin() {
+			return {
+				postcssPlugin: "insertAfterPlugin",
+				Root(root) {
+					root.insertAfter(
+						root.first,
+						postcss.rule({
+							selector: "b",
+						})
+					);
+				},
+			};
+		}
+
+		insertAfterPlugin.postcss = true;
 		const html = [
 			"<html>",
 			"<style>",
@@ -179,13 +205,7 @@ describe("html tests", () => {
 			"</style>",
 			"</html>",
 		].join("\n");
-		return postcss([
-			function (root) {
-				root.insertAfter(root.first, {
-					selector: "b",
-				});
-			},
-		])
+		return postcss([insertAfterPlugin])
 			.process(html, {
 				syntax,
 				from: "insertAfter.html",
@@ -198,14 +218,12 @@ describe("html tests", () => {
 						"<style>",
 						"a {",
 						"\tdisplay: flex;",
-						"}",
-						"b {}",
+						"}b {}",
 						"</style>",
 						"<style>",
 						"a {",
 						"\tdisplay: flex;",
-						"}",
-						"b {}",
+						"}b {}",
 						"</style>",
 						"</html>",
 					].join("\n")
@@ -214,6 +232,16 @@ describe("html tests", () => {
 	});
 
 	it("stringify for unshift node", () => {
+		function unshiftNodePlugin() {
+			return {
+				postcssPlugin: "unshiftNodePlugin",
+				Root(root) {
+					root.nodes = [...postcss.parse("b {}").nodes, ...root.nodes];
+				},
+			};
+		}
+
+		unshiftNodePlugin.postcss = true;
 		const html = [
 			"<html>",
 			"<style>",
@@ -223,11 +251,7 @@ describe("html tests", () => {
 			"</style>",
 			"</html>",
 		].join("\n");
-		return postcss([
-			function (root) {
-				root.nodes.unshift(postcss.parse("b {}"));
-			},
-		])
+		return postcss([unshiftNodePlugin])
 			.process(html, {
 				syntax,
 				from: "unshift.html",
@@ -249,6 +273,17 @@ describe("html tests", () => {
 	});
 
 	it("stringify for push node", () => {
+		function pushNodePlugin() {
+			return {
+				postcssPlugin: "pushNodePlugin",
+				Root(root) {
+					root.nodes = [...root.nodes, ...postcss.parse("b {}").nodes];
+				},
+			};
+		}
+
+		pushNodePlugin.postcss = true;
+
 		const html = [
 			"<html>",
 			"<style>",
@@ -259,11 +294,7 @@ describe("html tests", () => {
 			"</html>",
 		].join("\n");
 
-		return postcss([
-			(root) => {
-				root.nodes.push(postcss.parse("b {}"));
-			},
-		])
+		return postcss([pushNodePlugin])
 			.process(html, {
 				syntax,
 				from: "push.html",
@@ -285,12 +316,19 @@ describe("html tests", () => {
 	});
 
 	it("stringify for nodes array", () => {
+		function nodesArrayPlugin() {
+			return {
+				postcssPlugin: "nodesArrayPlugin",
+				Root(root) {
+					root.nodes = postcss.parse("b {}").nodes;
+				},
+			};
+		}
+
+		nodesArrayPlugin.postcss = true;
+
 		const html = ["<html>", "<style>", "</style>", "</html>"].join("\n");
-		return postcss([
-			(root) => {
-				root.nodes = [postcss.parse("b {}")];
-			},
-		])
+		return postcss([nodesArrayPlugin])
 			.process(html, {
 				syntax,
 				from: "push.html",
