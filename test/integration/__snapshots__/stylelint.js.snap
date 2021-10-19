@@ -1,5 +1,279 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Integration with stylelint stylelint --fix with html test.html 1`] = `
+"<!DOCTYPE html>
+<html>
+	<head>
+		<style type=\\"text/css\\">
+      a {
+        display: flex;
+      }
+		</style>
+	</head>
+	<body>
+		<div style=\\"font-family: serif serif;\\"></div>
+	</body>
+</html>
+"
+`;
+
+exports[`Integration with stylelint stylelint --fix with html test.vue 1`] = `
+"<template>
+  <input v-model=\\"inputValue\\" />
+  <button @click=\\"handleClick\\" class=\\"add-button\\">Add ToDo</button>
+  <ul class=\\"todo-list\\">
+    <li
+      v-for=\\"(todo, index) in todoItems\\"
+      :key=\\"todo.id\\"
+      class=\\"todo-item\\"
+      :class=\\"{ 'todo-item--done': todo.done }\\"
+      @click=\\"todo.done = !todo.done\\"
+    >
+      <span v-if=\\"todo.done\\">✓</span> {{ todo.text }}
+    </li>
+  </ul>
+</template>
+<script setup>
+import { ref, computed } from \\"vue\\"
+const inputValue = ref(\\"\\")
+const todoItems = ref([])
+
+function handleClick() {
+  todoItems.value.push({
+    id: Math.random().toString(36).slice(-8),
+    done: false,
+    text: inputValue.value,
+  })
+  inputValue.value = \\"\\"
+}
+
+const buttonColor = computed(() => (inputValue ? \\"black\\" : \\"white\\"));
+const buttonPointerEvents = computed(() =>
+  inputValue.value ? \\"initial\\" : \\"none\\"
+);
+</script>
+<style>
+.add-button {
+  color: v-bind(buttoncolor);
+  pointer-events: v-bind(\\"inputValue ? 'initial' : 'none'\\");
+}
+
+.todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  background-color: #eef;
+}
+
+.todo-item--done {
+  background-color: #3fb983;
+  color: #fff;
+}
+</style>
+"
+`;
+
+exports[`Integration with stylelint stylelint --fix with html test-with-stylus.vue 1`] = `
+"<template>
+  <div style=\\"display: flex;\\"/>
+</template>
+<script>
+</script>
+<style lang=\\"stylus\\">
+.add-button 
+  color red;
+
+
+.todo-list 
+  list-style none
+  background-color #eef
+
+  .todo-item--done {
+    background-color: #3fb983;
+    color: #fff;
+  }
+
+</style>
+"
+`;
+
+exports[`Integration with stylelint stylelint with html test.html 1`] = `
+Array [
+  Object {
+    "column": 38,
+    "line": 11,
+    "rule": "declaration-block-trailing-semicolon",
+    "severity": "error",
+    "text": "Expected a trailing semicolon (declaration-block-trailing-semicolon)",
+  },
+  Object {
+    "column": 28,
+    "line": 11,
+    "rule": "font-family-no-missing-generic-family-keyword",
+    "severity": "error",
+    "text": "Unexpected missing generic font family (font-family-no-missing-generic-family-keyword)",
+  },
+  Object {
+    "column": 4,
+    "line": 5,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 6 spaces (indentation)",
+  },
+  Object {
+    "column": 4,
+    "line": 7,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 6 spaces (indentation)",
+  },
+  Object {
+    "column": 5,
+    "line": 6,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 8 spaces (indentation)",
+  },
+]
+`;
+
+exports[`Integration with stylelint stylelint with html test.vue 1`] = `
+Array [
+  Object {
+    "column": 1,
+    "line": 40,
+    "rule": "rule-empty-line-before",
+    "severity": "error",
+    "text": "Expected empty line before rule (rule-empty-line-before)",
+  },
+  Object {
+    "column": 1,
+    "line": 43,
+    "rule": "rule-empty-line-before",
+    "severity": "error",
+    "text": "Expected empty line before rule (rule-empty-line-before)",
+  },
+  Object {
+    "column": 1,
+    "line": 46,
+    "rule": "rule-empty-line-before",
+    "severity": "error",
+    "text": "Expected empty line before rule (rule-empty-line-before)",
+  },
+  Object {
+    "column": 17,
+    "line": 37,
+    "rule": "value-keyword-case",
+    "severity": "error",
+    "text": "Expected \\"buttonColor\\" to be \\"buttoncolor\\" (value-keyword-case)",
+  },
+]
+`;
+
+exports[`Integration with stylelint stylelint with html test-with-stylus.vue 1`] = `
+Array [
+  Object {
+    "column": 14,
+    "line": 8,
+    "rule": "block-closing-brace-newline-before",
+    "severity": "error",
+    "text": "Expected newline before \\"}\\" of a multi-line block (block-closing-brace-newline-before)",
+  },
+  Object {
+    "column": 5,
+    "line": 16,
+    "rule": "block-closing-brace-newline-before",
+    "severity": "error",
+    "text": "Expected newline before \\"}\\" of a multi-line block (block-closing-brace-newline-before)",
+  },
+  Object {
+    "column": 11,
+    "line": 7,
+    "rule": "block-opening-brace-space-before",
+    "severity": "error",
+    "text": "Expected single space before \\"{\\" (block-opening-brace-space-before)",
+  },
+  Object {
+    "column": 10,
+    "line": 9,
+    "rule": "block-opening-brace-space-before",
+    "severity": "error",
+    "text": "Expected single space before \\"{\\" (block-opening-brace-space-before)",
+  },
+  Object {
+    "column": 27,
+    "line": 2,
+    "rule": "declaration-block-trailing-semicolon",
+    "severity": "error",
+    "text": "Expected a trailing semicolon (declaration-block-trailing-semicolon)",
+  },
+  Object {
+    "column": 14,
+    "line": 8,
+    "rule": "declaration-block-trailing-semicolon",
+    "severity": "error",
+    "text": "Expected a trailing semicolon (declaration-block-trailing-semicolon)",
+  },
+  Object {
+    "column": 1,
+    "line": 9,
+    "rule": "rule-empty-line-before",
+    "severity": "error",
+    "text": "Expected empty line before rule (rule-empty-line-before)",
+  },
+  Object {
+    "column": 5,
+    "line": 8,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 2 spaces (indentation)",
+  },
+  Object {
+    "column": 5,
+    "line": 10,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 2 spaces (indentation)",
+  },
+  Object {
+    "column": 5,
+    "line": 11,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 2 spaces (indentation)",
+  },
+  Object {
+    "column": 5,
+    "line": 13,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 2 spaces (indentation)",
+  },
+  Object {
+    "column": 5,
+    "line": 16,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 2 spaces (indentation)",
+  },
+  Object {
+    "column": 9,
+    "line": 14,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 4 spaces (indentation)",
+  },
+  Object {
+    "column": 9,
+    "line": 15,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 4 spaces (indentation)",
+  },
+]
+`;
+
 exports[`stylelint stylelint --fix with html test.html 1`] = `
 "<!DOCTYPE html>
 <html>

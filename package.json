@@ -45,7 +45,6 @@
       "lcov",
       "text"
     ],
-    "all": true,
     "cache": true,
     "check-coverage": true
   },

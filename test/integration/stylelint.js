@@ -15,7 +15,7 @@ const FIXTURE_ROOT = path.resolve(
 	"../../test-fixtures/integration/stylelint"
 );
 
-describe("stylelint", () => {
+describe("Integration with stylelint", () => {
 	for (const { filename, content } of listupFixtures(FIXTURE_ROOT)) {
 		describe(`stylelint with html`, () => {
 			it(filename, () =>
