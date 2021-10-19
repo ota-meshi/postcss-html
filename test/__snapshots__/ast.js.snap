@@ -96,7 +96,7 @@ Object {
       "raws": Object {
         "after": "
 ",
-        "beforeStart": "<!DOCTYPE html>
+        "codeBefore": "<!DOCTYPE html>
 <html>
 	<head>
 		<style type=\\"text/css\\">
@@ -144,7 +144,11 @@ Object {
       ],
       "raws": Object {
         "after": "",
-        "beforeStart": "		</style>
+        "codeAfter": "\\"></div>
+	</body>
+</html>
+",
+        "codeBefore": "		</style>
 	</head>
 	<body>
 		<div style=\\"",
@@ -162,12 +166,7 @@ Object {
       "type": "root",
     },
   ],
-  "raws": Object {
-    "afterEnd": "\\"></div>
-	</body>
-</html>
-",
-  },
+  "raws": Object {},
   "source": Object {
     "end": undefined,
     "inputId": 0,
@@ -176,7 +175,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "root",
+  "type": "document",
 }
 `;
 
@@ -521,7 +520,9 @@ const buttonPointerEvents = computed(() =>
       "raws": Object {
         "after": "
 ",
-        "beforeStart": "<template>
+        "codeAfter": "</style>
+",
+        "codeBefore": "<template>
   <input v-model=\\"inputValue\\" />
   <button @click=\\"handleClick\\" class=\\"add-button\\">Add ToDo</button>
   <ul class=\\"todo-list\\">
@@ -571,10 +572,7 @@ const buttonPointerEvents = computed(() =>
       "type": "root",
     },
   ],
-  "raws": Object {
-    "afterEnd": "</style>
-",
-  },
+  "raws": Object {},
   "source": Object {
     "end": undefined,
     "inputId": 0,
@@ -583,6 +581,6 @@ const buttonPointerEvents = computed(() =>
       "line": 1,
     },
   },
-  "type": "root",
+  "type": "document",
 }
 `;
