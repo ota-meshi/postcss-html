@@ -17,7 +17,9 @@ describe("Integration with stylelint-config-recommended-vue", () => {
 	before(() => {
 		originalCwd = process.cwd();
 		process.chdir(FIXTURE_ROOT);
-		cp.execSync("npm i --no-package-lock", { stdio: "inherit" });
+		cp.execSync("npm i --no-package-lock --legacy-peer-deps", {
+			stdio: "inherit",
+		});
 	});
 	after(() => {
 		process.chdir(originalCwd);
