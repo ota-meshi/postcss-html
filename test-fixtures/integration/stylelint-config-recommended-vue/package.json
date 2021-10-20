@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "",
   "devDependencies": {
-    "stylelint": "github:stylelint/stylelint#v14",
+    "stylelint": "^14.0.0-0",
     "stylelint-config-recommended-vue": "*",
     "postcss-html": "file:../../../"
   },
