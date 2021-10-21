@@ -584,3 +584,101 @@ const buttonPointerEvents = computed(() =>
   "type": "document",
 }
 `;
+
+exports[`AST tests unknown-lang.vue ast 1`] = `
+Object {
+  "inputs": Array [
+    Object {
+      "css": "a {}
+",
+      "file": "/unknown-lang.vue",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "<template>
+</template>
+<script setup>
+</script>
+<style lang=\\"unknown\\">
+unknown////
+</style>
+<style lang=\\"css\\">
+a {}
+</style>
+",
+      "file": "/unknown-lang.vue",
+      "hasBOM": false,
+    },
+  ],
+  "nodes": Array [
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "indexes": Object {},
+          "lastEach": 1,
+          "nodes": Array [],
+          "raws": Object {
+            "after": "",
+            "before": "",
+            "between": " ",
+          },
+          "selector": "a",
+          "source": Object {
+            "end": Object {
+              "column": 4,
+              "line": 9,
+              "offset": 3,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 1,
+              "line": 9,
+              "offset": 0,
+            },
+          },
+          "type": "rule",
+        },
+      ],
+      "raws": Object {
+        "after": "
+",
+        "codeAfter": "</style>
+",
+        "codeBefore": "<template>
+</template>
+<script setup>
+</script>
+<style lang=\\"unknown\\">
+unknown////
+</style>
+<style lang=\\"css\\">
+",
+        "semicolon": false,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 1,
+          "line": 9,
+          "offset": 0,
+        },
+      },
+      "type": "root",
+    },
+  ],
+  "raws": Object {},
+  "source": Object {
+    "end": undefined,
+    "inputId": 0,
+    "start": Object {
+      "column": 1,
+      "line": 1,
+    },
+  },
+  "type": "document",
+}
+`;
