@@ -4,7 +4,7 @@ const expect = require("chai").expect;
 const syntax = require("../");
 
 describe("backward compatible tests", () => {
-	it("Invalid HTML", () => {
+	it("Config", () => {
 		const html = `
 		<style lang="custom">
 		// comment

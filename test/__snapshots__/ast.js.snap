@@ -56,13 +56,13 @@ Object {
                 "end": Object {
                   "column": 18,
                   "line": 6,
-                  "offset": 24,
+                  "offset": 81,
                 },
                 "inputId": 0,
                 "start": Object {
                   "column": 5,
                   "line": 6,
-                  "offset": 11,
+                  "offset": 68,
                 },
               },
               "type": "decl",
@@ -81,13 +81,13 @@ Object {
             "end": Object {
               "column": 4,
               "line": 7,
-              "offset": 29,
+              "offset": 86,
             },
             "inputId": 0,
             "start": Object {
               "column": 4,
               "line": 5,
-              "offset": 3,
+              "offset": 60,
             },
           },
           "type": "rule",
@@ -109,7 +109,7 @@ Object {
         "start": Object {
           "column": 1,
           "line": 5,
-          "offset": 0,
+          "offset": 57,
         },
       },
       "type": "root",
@@ -129,13 +129,13 @@ Object {
             "end": Object {
               "column": 38,
               "line": 11,
-              "offset": 23,
+              "offset": 153,
             },
             "inputId": 0,
             "start": Object {
               "column": 15,
               "line": 11,
-              "offset": 0,
+              "offset": 130,
             },
           },
           "type": "decl",
@@ -160,7 +160,7 @@ Object {
         "start": Object {
           "column": 15,
           "line": 11,
-          "offset": 0,
+          "offset": 130,
         },
       },
       "type": "root",
@@ -278,13 +278,13 @@ const buttonPointerEvents = computed(() =>
                 "end": Object {
                   "column": 29,
                   "line": 37,
-                  "offset": 42,
+                  "offset": 901,
                 },
                 "inputId": 0,
                 "start": Object {
                   "column": 3,
                   "line": 37,
-                  "offset": 16,
+                  "offset": 875,
                 },
               },
               "type": "decl",
@@ -301,13 +301,13 @@ const buttonPointerEvents = computed(() =>
                 "end": Object {
                   "column": 60,
                   "line": 38,
-                  "offset": 103,
+                  "offset": 962,
                 },
                 "inputId": 0,
                 "start": Object {
                   "column": 3,
                   "line": 38,
-                  "offset": 46,
+                  "offset": 905,
                 },
               },
               "type": "decl",
@@ -326,13 +326,13 @@ const buttonPointerEvents = computed(() =>
             "end": Object {
               "column": 1,
               "line": 39,
-              "offset": 105,
+              "offset": 964,
             },
             "inputId": 0,
             "start": Object {
               "column": 1,
               "line": 36,
-              "offset": 0,
+              "offset": 859,
             },
           },
           "type": "rule",
@@ -352,13 +352,13 @@ const buttonPointerEvents = computed(() =>
                 "end": Object {
                   "column": 19,
                   "line": 41,
-                  "offset": 138,
+                  "offset": 997,
                 },
                 "inputId": 0,
                 "start": Object {
                   "column": 3,
                   "line": 41,
-                  "offset": 122,
+                  "offset": 981,
                 },
               },
               "type": "decl",
@@ -378,13 +378,13 @@ const buttonPointerEvents = computed(() =>
             "end": Object {
               "column": 1,
               "line": 42,
-              "offset": 140,
+              "offset": 999,
             },
             "inputId": 0,
             "start": Object {
               "column": 1,
               "line": 40,
-              "offset": 107,
+              "offset": 966,
             },
           },
           "type": "rule",
@@ -404,13 +404,13 @@ const buttonPointerEvents = computed(() =>
                 "end": Object {
                   "column": 25,
                   "line": 44,
-                  "offset": 179,
+                  "offset": 1038,
                 },
                 "inputId": 0,
                 "start": Object {
                   "column": 3,
                   "line": 44,
-                  "offset": 157,
+                  "offset": 1016,
                 },
               },
               "type": "decl",
@@ -430,13 +430,13 @@ const buttonPointerEvents = computed(() =>
             "end": Object {
               "column": 1,
               "line": 45,
-              "offset": 181,
+              "offset": 1040,
             },
             "inputId": 0,
             "start": Object {
               "column": 1,
               "line": 43,
-              "offset": 142,
+              "offset": 1001,
             },
           },
           "type": "rule",
@@ -456,13 +456,13 @@ const buttonPointerEvents = computed(() =>
                 "end": Object {
                   "column": 28,
                   "line": 47,
-                  "offset": 229,
+                  "offset": 1088,
                 },
                 "inputId": 0,
                 "start": Object {
                   "column": 3,
                   "line": 47,
-                  "offset": 204,
+                  "offset": 1063,
                 },
               },
               "type": "decl",
@@ -479,13 +479,13 @@ const buttonPointerEvents = computed(() =>
                 "end": Object {
                   "column": 14,
                   "line": 48,
-                  "offset": 244,
+                  "offset": 1103,
                 },
                 "inputId": 0,
                 "start": Object {
                   "column": 3,
                   "line": 48,
-                  "offset": 233,
+                  "offset": 1092,
                 },
               },
               "type": "decl",
@@ -505,13 +505,13 @@ const buttonPointerEvents = computed(() =>
             "end": Object {
               "column": 1,
               "line": 49,
-              "offset": 246,
+              "offset": 1105,
             },
             "inputId": 0,
             "start": Object {
               "column": 1,
               "line": 46,
-              "offset": 183,
+              "offset": 1042,
             },
           },
           "type": "rule",
@@ -566,7 +566,105 @@ const buttonPointerEvents = computed(() =>
         "start": Object {
           "column": 1,
           "line": 36,
-          "offset": 0,
+          "offset": 859,
+        },
+      },
+      "type": "root",
+    },
+  ],
+  "raws": Object {},
+  "source": Object {
+    "end": undefined,
+    "inputId": 0,
+    "start": Object {
+      "column": 1,
+      "line": 1,
+    },
+  },
+  "type": "document",
+}
+`;
+
+exports[`AST tests unknown-lang.vue ast 1`] = `
+Object {
+  "inputs": Array [
+    Object {
+      "css": "a {}
+",
+      "file": "/unknown-lang.vue",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "<template>
+</template>
+<script setup>
+</script>
+<style lang=\\"unknown\\">
+unknown////
+</style>
+<style lang=\\"css\\">
+a {}
+</style>
+",
+      "file": "/unknown-lang.vue",
+      "hasBOM": false,
+    },
+  ],
+  "nodes": Array [
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "indexes": Object {},
+          "lastEach": 1,
+          "nodes": Array [],
+          "raws": Object {
+            "after": "",
+            "before": "",
+            "between": " ",
+          },
+          "selector": "a",
+          "source": Object {
+            "end": Object {
+              "column": 4,
+              "line": 9,
+              "offset": 114,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 1,
+              "line": 9,
+              "offset": 111,
+            },
+          },
+          "type": "rule",
+        },
+      ],
+      "raws": Object {
+        "after": "
+",
+        "codeAfter": "</style>
+",
+        "codeBefore": "<template>
+</template>
+<script setup>
+</script>
+<style lang=\\"unknown\\">
+unknown////
+</style>
+<style lang=\\"css\\">
+",
+        "semicolon": false,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 1,
+          "line": 9,
+          "offset": 111,
         },
       },
       "type": "root",
