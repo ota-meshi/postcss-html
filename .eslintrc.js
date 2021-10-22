@@ -32,6 +32,7 @@ module.exports = {
 				usePrettierrc: true,
 			},
 		],
+		"prefer-const": "error",
 	},
 	overrides: [
 		{
