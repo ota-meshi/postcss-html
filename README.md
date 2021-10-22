@@ -1,7 +1,7 @@
 # PostCSS HTML Syntax
 
 [![NPM license](https://img.shields.io/npm/l/postcss-html.svg)](https://www.npmjs.com/package/postcss-html)
-[![NPM version](https://img.shields.io/npm/v/postcss-html/next.svg?style=flat-square)](https://www.npmjs.com/package/postcss-html/v/next)
+[![NPM version](https://img.shields.io/npm/v/postcss-html.svg?style=flat-square)](https://www.npmjs.com/package/postcss-html)
 [![NPM downloads](https://img.shields.io/npm/dw/postcss-html.svg)](http://www.npmtrends.com/postcss-html)
 [![NPM downloads](https://img.shields.io/npm/dm/postcss-html.svg)](http://www.npmtrends.com/postcss-html)
 [![NPM downloads](https://img.shields.io/npm/dy/postcss-html.svg)](http://www.npmtrends.com/postcss-html)
@@ -23,7 +23,7 @@
 First thing's first, install the module:
 
 ```bash
-npm install postcss-html@next --save-dev
+npm install postcss-html --save-dev
 ```
 
 If you want support SCSS/SASS/LESS/SugarSS syntax, you need to install the corresponding module.
