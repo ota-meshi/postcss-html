@@ -111,4 +111,40 @@ PostCSS can be temporarily turned off by using special comments in your HTML. Fo
 
 The main use case of this plugin is to apply linting with [Stylelint] to `<style>` tags and `<div style="*">` property in HTML (and HTML-like).
 
+You can use it by configuring your `stylelint` config as follows:
+
+```json
+{
+    "overrides": [
+        {
+            "files": ["*.html", "**/*.html"],
+            "customSyntax": "postcss-html"
+        }
+    ]
+}
+```
+
+You can use it more easily if you use an already configured sharable config.
+
+```diff
+{
++    "extends": [
++        "stylelint-config-html",
+         // If you are using Vue.
++        "stylelint-config-recommended-vue"
++    ],
+-    "overrides": [
+-        {
+-            "files": ["*.html", "**/*.html"],
+-            "customSyntax": "postcss-html"
+-        }
+-    ]
+}
+```
+
+- [stylelint-config-html]
+- [stylelint-config-recommended-vue]
+
 [Stylelint]: https://stylelint.io/
+[stylelint-config-html]: https://github.com/ota-meshi/stylelint-config-html
+[stylelint-config-recommended-vue]: https://github.com/ota-meshi/stylelint-config-recommended-vue
