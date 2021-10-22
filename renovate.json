@@ -9,6 +9,6 @@
       "depTypeList": ["devDependencies"],
       "automerge": true
     }
-  ]
+  ],
   "includeForks": true
 }
