@@ -52,7 +52,8 @@
     "test": "nyc npm run mocha",
     "lint": "eslint .",
     "eslint-fix": "eslint . --fix",
-    "preversion": "npm run test"
+    "preversion": "npm run test",
+    "update-snap": "mocha \"test/**/*.js\" --no-timeouts --update"
   },
   "dependencies": {
     "htmlparser2": "^7.1.2",

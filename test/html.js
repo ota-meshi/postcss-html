@@ -341,6 +341,40 @@ describe("html tests", () => {
 			});
 	});
 
+	it("stringify for nodes array for empty tags", () => {
+		function nodesArrayPlugin() {
+			return {
+				postcssPlugin: "nodesArrayPlugin",
+				Root(root) {
+					root.nodes = postcss.parse("b {}").nodes;
+				},
+			};
+		}
+
+		nodesArrayPlugin.postcss = true;
+
+		const html = [
+			//
+			"<style></style>",
+			"<style></style>",
+		].join("\n");
+		return postcss([nodesArrayPlugin])
+			.process(html, {
+				syntax,
+				from: "push.html",
+			})
+			.then((result) => {
+				expect(result.root.source).to.haveOwnProperty("lang", "html");
+				expect(result.content).to.equal(
+					[
+						//
+						"<style>b {}</style>",
+						"<style>b {}</style>",
+					].join("\n")
+				);
+			});
+	});
+
 	it("<style> tag in last line", () => {
 		const html = "\n<style>b{}</style>";
 		const document = syntax.parse(html, {
