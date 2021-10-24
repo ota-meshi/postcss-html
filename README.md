@@ -102,9 +102,21 @@ PostCSS can be temporarily turned off by using special comments in your HTML. Fo
 ```html
 <html>
 <body>
+<!-- postcss-ignore -->
+<a style="color: red;" description="style is not parsed."></a>
+
+<a style="color: red;" description="style is parsed."></a>
+```
+
+```html
+<html>
+<body>
 <!-- postcss-disable -->
-<a style="color: red;"></a>
+<a style="color: red;" description="style is not parsed."></a>
+<a style="color: red;" description="style is not parsed."></a>
 <!-- postcss-enable -->
+
+<a style="color: red;" description="style is parsed."></a>
 ```
 
 ## Linting with Stylelint
