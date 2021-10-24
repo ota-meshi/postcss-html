@@ -1,5 +1,84 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`AST tests empty-tags.html ast 1`] = `
+Object {
+  "inputs": Array [
+    Object {
+      "css": "",
+      "file": "/empty-tags.html",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "",
+      "file": "/empty-tags.html",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "<style></style>
+<style></style>
+",
+      "file": "/empty-tags.html",
+      "hasBOM": false,
+    },
+  ],
+  "nodes": Array [
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [],
+      "raws": Object {
+        "after": "",
+        "codeBefore": "<style>",
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 8,
+          "line": 1,
+          "offset": 7,
+        },
+      },
+      "type": "root",
+    },
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [],
+      "raws": Object {
+        "after": "",
+        "codeAfter": "</style>
+",
+        "codeBefore": "</style>
+<style>",
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 8,
+          "line": 2,
+          "offset": 23,
+        },
+      },
+      "type": "root",
+    },
+  ],
+  "raws": Object {},
+  "source": Object {
+    "end": undefined,
+    "inputId": 0,
+    "start": Object {
+      "column": 1,
+      "line": 1,
+    },
+  },
+  "type": "document",
+}
+`;
+
 exports[`AST tests ignore-comment.vue ast 1`] = `
 Object {
   "inputs": Array [
