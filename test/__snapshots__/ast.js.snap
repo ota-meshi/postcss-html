@@ -1,5 +1,525 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`AST tests ignore-comment.vue ast 1`] = `
+Object {
+  "inputs": Array [
+    Object {
+      "css": "color: blue",
+      "file": "/ignore-comment.vue",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "color: green",
+      "file": "/ignore-comment.vue",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "color: white",
+      "file": "/ignore-comment.vue",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "color: brack",
+      "file": "/ignore-comment.vue",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "color: yellow",
+      "file": "/ignore-comment.vue",
+      "hasBOM": false,
+    },
+    Object {
+      "css": ".b {
+  color: red;
+}
+",
+      "file": "/ignore-comment.vue",
+      "hasBOM": false,
+    },
+    Object {
+      "css": ".c {
+  color: red;
+}
+",
+      "file": "/ignore-comment.vue",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "<template>
+  <div>
+    <!--postcss-ignore-->
+    <div style=\\"color: red\\">
+      <div style=\\"color: blue\\">
+      </div>
+    </div>
+    <!--postcss-ignore-->
+    <input>
+    <div style=\\"color: green\\">
+    </div>
+    <!--postcss-ignore-->
+    <div></div>
+    <div style=\\"color: white\\">
+    </div>
+    <div><!--postcss-ignore--></div>
+    <div style=\\"color: brack\\">
+    </div>
+    <!--postcss-ignore--><!--foo-->
+    <div style=\\"color: yellow\\">
+    </div>
+  </div>
+</template>
+
+<!--postcss-ignore-->
+<style>
+a {
+  color: red;
+}
+</style>
+
+<style>
+.b {
+  color: red;
+}
+</style>
+
+<!--postcss-ignore-->
+<script lang=\\"ts\\">
+</script>
+
+<style>
+.c {
+  color: red;
+}
+</style>
+",
+      "file": "/ignore-comment.vue",
+      "hasBOM": false,
+    },
+  ],
+  "nodes": Array [
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "prop": "color",
+          "raws": Object {
+            "before": "",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 29,
+              "line": 5,
+              "offset": 102,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 19,
+              "line": 5,
+              "offset": 92,
+            },
+          },
+          "type": "decl",
+          "value": "blue",
+        },
+      ],
+      "raws": Object {
+        "after": "",
+        "codeBefore": "<template>
+  <div>
+    <!--postcss-ignore-->
+    <div style=\\"color: red\\">
+      <div style=\\"",
+        "semicolon": false,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 19,
+          "line": 5,
+          "offset": 92,
+        },
+      },
+      "type": "root",
+    },
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "prop": "color",
+          "raws": Object {
+            "before": "",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 28,
+              "line": 10,
+              "offset": 195,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 17,
+              "line": 10,
+              "offset": 184,
+            },
+          },
+          "type": "decl",
+          "value": "green",
+        },
+      ],
+      "raws": Object {
+        "after": "",
+        "codeBefore": "\\">
+      </div>
+    </div>
+    <!--postcss-ignore-->
+    <input>
+    <div style=\\"",
+        "semicolon": false,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 17,
+          "line": 10,
+          "offset": 184,
+        },
+      },
+      "type": "root",
+    },
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "prop": "color",
+          "raws": Object {
+            "before": "",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 28,
+              "line": 14,
+              "offset": 279,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 17,
+              "line": 14,
+              "offset": 268,
+            },
+          },
+          "type": "decl",
+          "value": "white",
+        },
+      ],
+      "raws": Object {
+        "after": "",
+        "codeBefore": "\\">
+    </div>
+    <!--postcss-ignore-->
+    <div></div>
+    <div style=\\"",
+        "semicolon": false,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 17,
+          "line": 14,
+          "offset": 268,
+        },
+      },
+      "type": "root",
+    },
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "prop": "color",
+          "raws": Object {
+            "before": "",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 28,
+              "line": 17,
+              "offset": 358,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 17,
+              "line": 17,
+              "offset": 347,
+            },
+          },
+          "type": "decl",
+          "value": "brack",
+        },
+      ],
+      "raws": Object {
+        "after": "",
+        "codeBefore": "\\">
+    </div>
+    <div><!--postcss-ignore--></div>
+    <div style=\\"",
+        "semicolon": false,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 17,
+          "line": 17,
+          "offset": 347,
+        },
+      },
+      "type": "root",
+    },
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "prop": "color",
+          "raws": Object {
+            "before": "",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 29,
+              "line": 20,
+              "offset": 437,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 17,
+              "line": 20,
+              "offset": 425,
+            },
+          },
+          "type": "decl",
+          "value": "yellow",
+        },
+      ],
+      "raws": Object {
+        "after": "",
+        "codeBefore": "\\">
+    </div>
+    <!--postcss-ignore--><!--foo-->
+    <div style=\\"",
+        "semicolon": false,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 17,
+          "line": 20,
+          "offset": 425,
+        },
+      },
+      "type": "root",
+    },
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "indexes": Object {},
+          "lastEach": 1,
+          "nodes": Array [
+            Object {
+              "prop": "color",
+              "raws": Object {
+                "before": "
+  ",
+                "between": ": ",
+              },
+              "source": Object {
+                "end": Object {
+                  "column": 13,
+                  "line": 34,
+                  "offset": 559,
+                },
+                "inputId": 0,
+                "start": Object {
+                  "column": 3,
+                  "line": 34,
+                  "offset": 549,
+                },
+              },
+              "type": "decl",
+              "value": "red",
+            },
+          ],
+          "raws": Object {
+            "after": "
+",
+            "before": "",
+            "between": " ",
+            "semicolon": true,
+          },
+          "selector": ".b",
+          "source": Object {
+            "end": Object {
+              "column": 1,
+              "line": 35,
+              "offset": 561,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 1,
+              "line": 33,
+              "offset": 542,
+            },
+          },
+          "type": "rule",
+        },
+      ],
+      "raws": Object {
+        "after": "
+",
+        "codeBefore": "\\">
+    </div>
+  </div>
+</template>
+
+<!--postcss-ignore-->
+<style>
+a {
+  color: red;
+}
+</style>
+
+<style>
+",
+        "semicolon": false,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 1,
+          "line": 33,
+          "offset": 542,
+        },
+      },
+      "type": "root",
+    },
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "indexes": Object {},
+          "lastEach": 1,
+          "nodes": Array [
+            Object {
+              "prop": "color",
+              "raws": Object {
+                "before": "
+  ",
+                "between": ": ",
+              },
+              "source": Object {
+                "end": Object {
+                  "column": 13,
+                  "line": 44,
+                  "offset": 650,
+                },
+                "inputId": 0,
+                "start": Object {
+                  "column": 3,
+                  "line": 44,
+                  "offset": 640,
+                },
+              },
+              "type": "decl",
+              "value": "red",
+            },
+          ],
+          "raws": Object {
+            "after": "
+",
+            "before": "",
+            "between": " ",
+            "semicolon": true,
+          },
+          "selector": ".c",
+          "source": Object {
+            "end": Object {
+              "column": 1,
+              "line": 45,
+              "offset": 652,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 1,
+              "line": 43,
+              "offset": 633,
+            },
+          },
+          "type": "rule",
+        },
+      ],
+      "raws": Object {
+        "after": "
+",
+        "codeAfter": "</style>
+",
+        "codeBefore": "</style>
+
+<!--postcss-ignore-->
+<script lang=\\"ts\\">
+</script>
+
+<style>
+",
+        "semicolon": false,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 1,
+          "line": 43,
+          "offset": 633,
+        },
+      },
+      "type": "root",
+    },
+  ],
+  "raws": Object {},
+  "source": Object {
+    "end": undefined,
+    "inputId": 0,
+    "start": Object {
+      "column": 1,
+      "line": 1,
+    },
+  },
+  "type": "document",
+}
+`;
+
 exports[`AST tests test.html ast 1`] = `
 Object {
   "inputs": Array [
