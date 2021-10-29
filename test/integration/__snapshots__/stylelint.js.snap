@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Integration with stylelint stylelint --fix with html lang-postcss.vue 1`] = `
+"<template>
+</template>
+<style lang=\\"postcss\\">
+a {
+  a {
+    color: red;
+  }
+}
+</style>
+"
+`;
+
 exports[`Integration with stylelint stylelint --fix with html test.html 1`] = `
 "<!DOCTYPE html>
 <html>
@@ -96,6 +109,39 @@ exports[`Integration with stylelint stylelint --fix with html test-with-stylus.v
 
 </style>
 "
+`;
+
+exports[`Integration with stylelint stylelint with html lang-postcss.vue 1`] = `
+Array [
+  Object {
+    "column": 10,
+    "line": 6,
+    "rule": "declaration-block-trailing-semicolon",
+    "severity": "error",
+    "text": "Expected a trailing semicolon (declaration-block-trailing-semicolon)",
+  },
+  Object {
+    "column": 1,
+    "line": 5,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 2 spaces (indentation)",
+  },
+  Object {
+    "column": 1,
+    "line": 7,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 2 spaces (indentation)",
+  },
+  Object {
+    "column": 1,
+    "line": 6,
+    "rule": "indentation",
+    "severity": "error",
+    "text": "Expected indentation of 4 spaces (indentation)",
+  },
+]
 `;
 
 exports[`Integration with stylelint stylelint with html test.html 1`] = `
