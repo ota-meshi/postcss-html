@@ -599,6 +599,157 @@ a {
 }
 `;
 
+exports[`AST tests lang-postcss.vue ast 1`] = `
+Object {
+  "inputs": Array [
+    Object {
+      "css": "a {
+a {
+color: red
+}
+}
+",
+      "file": "/lang-postcss.vue",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "<template>
+</template>
+<style lang=\\"postcss\\">
+a {
+a {
+color: red
+}
+}
+</style>
+",
+      "file": "/lang-postcss.vue",
+      "hasBOM": false,
+    },
+  ],
+  "nodes": Array [
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "indexes": Object {},
+          "lastEach": 1,
+          "nodes": Array [
+            Object {
+              "indexes": Object {},
+              "lastEach": 1,
+              "nodes": Array [
+                Object {
+                  "prop": "color",
+                  "raws": Object {
+                    "before": "
+",
+                    "between": ": ",
+                  },
+                  "source": Object {
+                    "end": Object {
+                      "column": 10,
+                      "line": 6,
+                      "offset": 63,
+                    },
+                    "inputId": 0,
+                    "start": Object {
+                      "column": 1,
+                      "line": 6,
+                      "offset": 54,
+                    },
+                  },
+                  "type": "decl",
+                  "value": "red",
+                },
+              ],
+              "raws": Object {
+                "after": "
+",
+                "before": "
+",
+                "between": " ",
+                "semicolon": false,
+              },
+              "selector": "a",
+              "source": Object {
+                "end": Object {
+                  "column": 1,
+                  "line": 7,
+                  "offset": 65,
+                },
+                "inputId": 0,
+                "start": Object {
+                  "column": 1,
+                  "line": 5,
+                  "offset": 50,
+                },
+              },
+              "type": "rule",
+            },
+          ],
+          "raws": Object {
+            "after": "
+",
+            "before": "",
+            "between": " ",
+            "semicolon": false,
+          },
+          "selector": "a",
+          "source": Object {
+            "end": Object {
+              "column": 1,
+              "line": 8,
+              "offset": 67,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 1,
+              "line": 4,
+              "offset": 46,
+            },
+          },
+          "type": "rule",
+        },
+      ],
+      "raws": Object {
+        "after": "
+",
+        "codeAfter": "</style>
+",
+        "codeBefore": "<template>
+</template>
+<style lang=\\"postcss\\">
+",
+        "semicolon": false,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 1,
+          "line": 4,
+          "offset": 46,
+        },
+      },
+      "type": "root",
+    },
+  ],
+  "raws": Object {},
+  "source": Object {
+    "end": undefined,
+    "inputId": 0,
+    "start": Object {
+      "column": 1,
+      "line": 1,
+    },
+  },
+  "type": "document",
+}
+`;
+
 exports[`AST tests test.html ast 1`] = `
 Object {
   "inputs": Array [
