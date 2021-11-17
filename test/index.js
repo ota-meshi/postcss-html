@@ -39,7 +39,11 @@ describe("API", () => {
 			syntax.parse("<style>a {</style>", {
 				from: "SyntaxError.vue",
 			});
-		}).to.throw(/SyntaxError.vue:1:8: Unclosed block\b/);
+		})
+			.to.throw(/SyntaxError.vue:1:8: Unclosed block\b/)
+			.with.include({ line: 1, column: 8 })
+			.have.property("input")
+			.include({ line: 1, column: 8 });
 	});
 
 	it("single line with line ending syntax error", () => {
