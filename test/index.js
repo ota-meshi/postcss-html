@@ -59,7 +59,11 @@ describe("API", () => {
 			syntax.parse(["<html>", "<style>a {</style>", "</html>"].join("\n"), {
 				from: "SyntaxError.html",
 			});
-		}).to.throw(/SyntaxError.html:2:8: Unclosed block\b/);
+		})
+			.to.throw(/SyntaxError.html:2:8: Unclosed block\b/)
+			.with.include({ line: 2, column: 8 })
+			.have.property("input")
+			.include({ line: 2, column: 8 });
 	});
 
 	it("custom parse error", () => {
