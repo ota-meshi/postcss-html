@@ -44,6 +44,16 @@ describe("API", () => {
 			.with.include({ line: 1, column: 8 })
 			.have.property("input")
 			.include({ line: 1, column: 8 });
+
+		expect(() => {
+			syntax.parse("<style>foo foo</style>", {
+				from: "SyntaxError.vue",
+			});
+		})
+			.to.throw(/SyntaxError.vue:1:8: Unknown word\b/)
+			.with.include({ line: 1, column: 8, endLine: 1, endColumn: 11 })
+			.have.property("input")
+			.include({ line: 1, column: 8, endLine: 1, endColumn: 11 });
 	});
 
 	it("single line with line ending syntax error", () => {
@@ -56,14 +66,40 @@ describe("API", () => {
 
 	it("multi line syntax error", () => {
 		expect(() => {
-			syntax.parse(["<html>", "<style>a {</style>", "</html>"].join("\n"), {
-				from: "SyntaxError.html",
-			});
+			syntax.parse(
+				[
+					//
+					"<html>",
+					"<style>a {</style>",
+					"</html>",
+				].join("\n"),
+				{
+					from: "SyntaxError.html",
+				}
+			);
 		})
 			.to.throw(/SyntaxError.html:2:8: Unclosed block\b/)
 			.with.include({ line: 2, column: 8 })
 			.have.property("input")
 			.include({ line: 2, column: 8 });
+
+		expect(() => {
+			syntax.parse(
+				[
+					//
+					"<html>",
+					"<style>foo foo</style>",
+					"</html>",
+				].join("\n"),
+				{
+					from: "SyntaxError.html",
+				}
+			);
+		})
+			.to.throw(/SyntaxError.html:2:8: Unknown word\b/)
+			.with.include({ line: 2, column: 8, endLine: 2, endColumn: 11 })
+			.have.property("input")
+			.include({ line: 2, column: 8, endLine: 2, endColumn: 11 });
 	});
 
 	it("custom parse error", () => {
