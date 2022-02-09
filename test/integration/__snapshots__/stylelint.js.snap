@@ -24,7 +24,7 @@ exports[`Integration with stylelint stylelint --fix with html test.html 1`] = `
 		</style>
 	</head>
 	<body>
-		<div style=\\"font-family: serif serif;\\"></div>
+		<div style=\\"font-family: \\"serif serif\\";\\"></div>
 	</body>
 </html>
 "
@@ -193,6 +193,20 @@ Array [
 
 exports[`Integration with stylelint stylelint with html test.vue 1`] = `
 Array [
+  Object {
+    "column": 10,
+    "line": 37,
+    "rule": "function-no-unknown",
+    "severity": "error",
+    "text": "Unexpected unknown function \\"v-bind\\" (function-no-unknown)",
+  },
+  Object {
+    "column": 19,
+    "line": 38,
+    "rule": "function-no-unknown",
+    "severity": "error",
+    "text": "Unexpected unknown function \\"v-bind\\" (function-no-unknown)",
+  },
   Object {
     "column": 1,
     "line": 40,
