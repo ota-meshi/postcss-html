@@ -929,6 +929,163 @@ Object {
 }
 `;
 
+exports[`AST tests test.svelte ast 1`] = `
+Object {
+  "inputs": Array [
+    Object {
+      "css": "color: {color}; --opacity: {bgOpacity};",
+      "file": "/test.svelte",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "color: {color}",
+      "file": "/test.svelte",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "<script>
+	let bgOpacity = 0.5;
+	$: color = bgOpacity < 0.6 ? '#000' : '#fff';
+</script>
+<p style=\\"color: {color}; --opacity: {bgOpacity};\\">This is a paragraph.</p>
+<p style=\\"color: {color}\\">This is a paragraph.</p>
+",
+      "file": "/test.svelte",
+      "hasBOM": false,
+    },
+  ],
+  "nodes": Array [
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "prop": "color",
+          "raws": Object {
+            "before": "",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 25,
+              "line": 5,
+              "offset": 112,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 11,
+              "line": 5,
+              "offset": 98,
+            },
+          },
+          "type": "decl",
+          "value": "{color}",
+        },
+        Object {
+          "prop": "--opacity",
+          "raws": Object {
+            "before": " ",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 49,
+              "line": 5,
+              "offset": 136,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 27,
+              "line": 5,
+              "offset": 114,
+            },
+          },
+          "type": "decl",
+          "value": "{bgOpacity}",
+        },
+      ],
+      "raws": Object {
+        "after": "",
+        "codeBefore": "<script>
+	let bgOpacity = 0.5;
+	$: color = bgOpacity < 0.6 ? '#000' : '#fff';
+</script>
+<p style=\\"",
+        "semicolon": true,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 11,
+          "line": 5,
+          "offset": 98,
+        },
+      },
+      "type": "root",
+    },
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "prop": "color",
+          "raws": Object {
+            "before": "",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 24,
+              "line": 6,
+              "offset": 187,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 11,
+              "line": 6,
+              "offset": 174,
+            },
+          },
+          "type": "decl",
+          "value": "{color}",
+        },
+      ],
+      "raws": Object {
+        "after": "",
+        "codeAfter": "\\">This is a paragraph.</p>
+",
+        "codeBefore": "\\">This is a paragraph.</p>
+<p style=\\"",
+        "semicolon": false,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 11,
+          "line": 6,
+          "offset": 174,
+        },
+      },
+      "type": "root",
+    },
+  ],
+  "raws": Object {},
+  "source": Object {
+    "end": undefined,
+    "inputId": 0,
+    "start": Object {
+      "column": 1,
+      "line": 1,
+    },
+  },
+  "type": "document",
+}
+`;
+
 exports[`AST tests test.vue ast 1`] = `
 Object {
   "inputs": Array [
