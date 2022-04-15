@@ -4,6 +4,7 @@
   "javascript.validate.enable": false,
   "vetur.validation.script": false,
   "vetur.validation.style": false,
+  "vetur.validation.template": false,
   "css.validate": false,
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.codeActionsOnSave": {
