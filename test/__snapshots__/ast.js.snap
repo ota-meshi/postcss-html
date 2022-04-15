@@ -1578,6 +1578,92 @@ const buttonPointerEvents = computed(() =>
 }
 `;
 
+exports[`AST tests test2.svelte ast 1`] = `
+Object {
+  "inputs": Array [
+    Object {
+      "css": "color: {color}; {styleOpacity}",
+      "file": "/test2.svelte",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "<script>
+	let bgOpacity = 0.5;
+	$: color = bgOpacity < 0.6 ? '#000' : '#fff';
+	$: styleOpacity = \`--opacity: \${bgOpacity};\`
+</script>
+<p style=\\"color: {color}; {styleOpacity}\\">This is a paragraph.</p>
+",
+      "file": "/test2.svelte",
+      "hasBOM": false,
+    },
+  ],
+  "nodes": Array [
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "prop": "color",
+          "raws": Object {
+            "before": "",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 25,
+              "line": 6,
+              "offset": 158,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 11,
+              "line": 6,
+              "offset": 144,
+            },
+          },
+          "type": "decl",
+          "value": "{color}",
+        },
+      ],
+      "raws": Object {
+        "after": " {styleOpacity}",
+        "codeAfter": "\\">This is a paragraph.</p>
+",
+        "codeBefore": "<script>
+	let bgOpacity = 0.5;
+	$: color = bgOpacity < 0.6 ? '#000' : '#fff';
+	$: styleOpacity = \`--opacity: \${bgOpacity};\`
+</script>
+<p style=\\"",
+        "semicolon": true,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 11,
+          "line": 6,
+          "offset": 144,
+        },
+      },
+      "type": "root",
+    },
+  ],
+  "raws": Object {},
+  "source": Object {
+    "end": undefined,
+    "inputId": 0,
+    "start": Object {
+      "column": 1,
+      "line": 1,
+    },
+  },
+  "type": "document",
+}
+`;
+
 exports[`AST tests unknown-lang.vue ast 1`] = `
 Object {
   "inputs": Array [
