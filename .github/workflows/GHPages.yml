@@ -13,7 +13,6 @@ jobs:
       - name: Install And Build
         run: |+
           npm install
-          npm run build
           cd explorer
           npm install
           npm run build
