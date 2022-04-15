@@ -1,5 +1,3 @@
-/* eslint node/no-unsupported-features/es-syntax: off -- not node */
-// eslint-disable-next-line node/no-unpublished-import -- ignore
 import pako from "pako"
 
 /**
@@ -14,14 +12,12 @@ export function serializeState(state) {
     }
     const jsonString = JSON.stringify(saveData)
 
-    // eslint-disable-next-line node/no-unsupported-features/node-builtins -- ignore
     const uint8Arr = new TextEncoder().encode(jsonString)
     const compressedString = String.fromCharCode(...pako.deflate(uint8Arr))
     const base64 =
         (typeof window !== "undefined" && window.btoa(compressedString)) ||
         compressedString
 
-    //eslint-disable-next-line no-console -- demo
     console.log(
         `The compress rate of serialized string: ${(
             (100 * base64.length) /

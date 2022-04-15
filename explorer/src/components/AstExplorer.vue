@@ -277,7 +277,6 @@ function createAstJson(options, value) {
     return ctx
 }
 
-// eslint-disable-next-line complexity -- ignore
 function processValue(options, ctx, value) {
     const type = typeof value
     if (

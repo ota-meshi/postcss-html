@@ -1,5 +1,3 @@
-/* eslint node/no-unsupported-features/es-syntax: off -- not node */
-// eslint-disable-next-line node/no-unpublished-import -- ignore
 import pako from "pako"
 
 /**
@@ -23,7 +21,6 @@ export function deserializeState(serializedString) {
             Uint8Array.from(compressedString, (c) => c.charCodeAt(0)),
         )
 
-        // eslint-disable-next-line node/no-unsupported-features/node-builtins -- ignore
         const jsonText = new TextDecoder().decode(uint8Arr)
         const json = JSON.parse(jsonText)
 
@@ -36,7 +33,6 @@ export function deserializeState(serializedString) {
             }
         }
     } catch (error) {
-        // eslint-disable-next-line no-console -- demo
         console.error(error)
     }
 

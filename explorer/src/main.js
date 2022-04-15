@@ -13,7 +13,6 @@ if (typeof window !== "undefined") {
         window.process = new Proxy(process, {
             get(_t, p) {
                 if (!process[p]) {
-                    // eslint-disable-next-line no-console -- demo
                     console.log(p)
                 }
                 return process[p]

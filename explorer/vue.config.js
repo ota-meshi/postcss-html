@@ -1,4 +1,3 @@
-// eslint-disable-next-line node/no-extraneous-require -- ignore
 const webpack = require("webpack")
 module.exports = {
     publicPath: "/postcss-html/",
@@ -12,7 +11,6 @@ module.exports = {
                     fs: require.resolve("./shim/fs"),
                     glob: require.resolve("./shim/glob"),
                     stylus: require.resolve(
-                        // eslint-disable-next-line node/no-unpublished-require -- ignore
                         "../node_modules/stylus/lib/stylus",
                     ),
                 },
