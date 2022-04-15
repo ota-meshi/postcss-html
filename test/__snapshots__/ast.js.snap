@@ -1,5 +1,89 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`AST tests brace.svelte ast 1`] = `
+Object {
+  "inputs": Array [
+    Object {
+      "css": "color: {color}",
+      "file": "/brace.svelte",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "<script>
+	let color = '#f00';
+	let value
+</script>
+<input class:over-100={value > 100} bind:value={value} style=\\"color: {color}\\">
+",
+      "file": "/brace.svelte",
+      "hasBOM": false,
+    },
+  ],
+  "nodes": Array [
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "prop": "color",
+          "raws": Object {
+            "before": "",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 76,
+              "line": 5,
+              "offset": 126,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 63,
+              "line": 5,
+              "offset": 113,
+            },
+          },
+          "type": "decl",
+          "value": "{color}",
+        },
+      ],
+      "raws": Object {
+        "after": "",
+        "codeAfter": "\\">
+",
+        "codeBefore": "<script>
+	let color = '#f00';
+	let value
+</script>
+<input class:over-100={value > 100} bind:value={value} style=\\"",
+        "semicolon": false,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 63,
+          "line": 5,
+          "offset": 113,
+        },
+      },
+      "type": "root",
+    },
+  ],
+  "raws": Object {},
+  "source": Object {
+    "end": undefined,
+    "inputId": 0,
+    "start": Object {
+      "column": 1,
+      "line": 1,
+    },
+  },
+  "type": "document",
+}
+`;
+
 exports[`AST tests empty-tags.html ast 1`] = `
 Object {
   "inputs": Array [
