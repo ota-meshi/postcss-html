@@ -19,7 +19,7 @@ module.exports = {
 		"plugin:@ota-meshi/+prettier",
 	],
 	rules: {
-		"require-jsdoc": "off", // TODO
+		"require-jsdoc": "off",
 		"no-tabs": ["error", { allowIndentationTabs: true }],
 		"no-warning-comments": "warn",
 		"no-lonely-if": "off",
