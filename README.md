@@ -13,8 +13,9 @@
 
 [PostCSS](https://github.com/postcss/postcss) syntax for parsing HTML (and HTML-like)
 
+- [Vue Single-File Components](https://vuejs.org/guide/scaling-up/sfc.html)
+- [Svelte Components](https://svelte.dev/docs#component-format)
 - [PHP](http://php.net)
-- [Vue Single-File Component](https://vue-loader.vuejs.org/spec.html)
 - [Quick App](https://doc.quickapp.cn/framework/source-file.html)
 - [XSLT](https://www.w3.org/TR/xslt-30/)
 
@@ -94,6 +95,31 @@ const options = {
 }
 const syntax = require('postcss-html')(options);
 ```
+
+## Parse Svelte Components
+
+If you want to parse Svelte components, you need to install `acorn`.
+
+```bash
+npm install acorn --save-dev
+```
+
+Svelte components are similar to HTML, but the expressions used in the template may not be parsed as HTML.
+
+e.g.
+
+```svelte
+<input class:foo={value > 100} style="color: red">
+```
+
+The input element of this template has the following range when parsed as HTML.
+Therefore, the style attribute is not recognized as an attribute.
+
+```html
+<input class:foo={value >
+```
+
+`postcss-html` will try to parse the template well if it finds the `acorn` package needed to parse `.svelte`.
 
 ## Turning PostCSS off from within your HTML
 
