@@ -115,6 +115,8 @@ exports[`Integration with stylelint stylelint with html lang-postcss.vue 1`] = `
 Array [
   Object {
     "column": 10,
+    "endColumn": 11,
+    "endLine": 6,
     "line": 6,
     "rule": "declaration-block-trailing-semicolon",
     "severity": "error",
@@ -122,6 +124,8 @@ Array [
   },
   Object {
     "column": 1,
+    "endColumn": 2,
+    "endLine": 7,
     "line": 5,
     "rule": "indentation",
     "severity": "error",
@@ -129,6 +133,8 @@ Array [
   },
   Object {
     "column": 1,
+    "endColumn": 2,
+    "endLine": 7,
     "line": 7,
     "rule": "indentation",
     "severity": "error",
@@ -136,6 +142,8 @@ Array [
   },
   Object {
     "column": 1,
+    "endColumn": 11,
+    "endLine": 6,
     "line": 6,
     "rule": "indentation",
     "severity": "error",
@@ -148,6 +156,8 @@ exports[`Integration with stylelint stylelint with html test.html 1`] = `
 Array [
   Object {
     "column": 38,
+    "endColumn": 39,
+    "endLine": 11,
     "line": 11,
     "rule": "declaration-block-trailing-semicolon",
     "severity": "error",
@@ -155,6 +165,8 @@ Array [
   },
   Object {
     "column": 28,
+    "endColumn": 33,
+    "endLine": 11,
     "line": 11,
     "rule": "font-family-no-missing-generic-family-keyword",
     "severity": "error",
@@ -162,6 +174,8 @@ Array [
   },
   Object {
     "column": 28,
+    "endColumn": 39,
+    "endLine": 11,
     "line": 11,
     "rule": "font-family-name-quotes",
     "severity": "error",
@@ -169,6 +183,8 @@ Array [
   },
   Object {
     "column": 4,
+    "endColumn": 5,
+    "endLine": 7,
     "line": 5,
     "rule": "indentation",
     "severity": "error",
@@ -176,6 +192,8 @@ Array [
   },
   Object {
     "column": 4,
+    "endColumn": 5,
+    "endLine": 7,
     "line": 7,
     "rule": "indentation",
     "severity": "error",
@@ -183,6 +201,8 @@ Array [
   },
   Object {
     "column": 5,
+    "endColumn": 19,
+    "endLine": 6,
     "line": 6,
     "rule": "indentation",
     "severity": "error",
@@ -195,6 +215,8 @@ exports[`Integration with stylelint stylelint with html test.vue 1`] = `
 Array [
   Object {
     "column": 10,
+    "endColumn": 11,
+    "endLine": 37,
     "line": 37,
     "rule": "function-no-unknown",
     "severity": "error",
@@ -202,6 +224,8 @@ Array [
   },
   Object {
     "column": 19,
+    "endColumn": 20,
+    "endLine": 38,
     "line": 38,
     "rule": "function-no-unknown",
     "severity": "error",
@@ -209,6 +233,8 @@ Array [
   },
   Object {
     "column": 1,
+    "endColumn": 2,
+    "endLine": 42,
     "line": 40,
     "rule": "rule-empty-line-before",
     "severity": "error",
@@ -216,6 +242,8 @@ Array [
   },
   Object {
     "column": 1,
+    "endColumn": 2,
+    "endLine": 45,
     "line": 43,
     "rule": "rule-empty-line-before",
     "severity": "error",
@@ -223,6 +251,8 @@ Array [
   },
   Object {
     "column": 1,
+    "endColumn": 2,
+    "endLine": 49,
     "line": 46,
     "rule": "rule-empty-line-before",
     "severity": "error",
@@ -230,6 +260,8 @@ Array [
   },
   Object {
     "column": 1,
+    "endColumn": 2,
+    "endLine": 49,
     "line": 46,
     "rule": "selector-class-pattern",
     "severity": "error",
@@ -237,6 +269,8 @@ Array [
   },
   Object {
     "column": 17,
+    "endColumn": 18,
+    "endLine": 37,
     "line": 37,
     "rule": "value-keyword-case",
     "severity": "error",
@@ -249,6 +283,8 @@ exports[`Integration with stylelint stylelint with html test-with-stylus.vue 1`]
 Array [
   Object {
     "column": 14,
+    "endColumn": 15,
+    "endLine": 8,
     "line": 8,
     "rule": "block-closing-brace-newline-before",
     "severity": "error",
@@ -256,6 +292,8 @@ Array [
   },
   Object {
     "column": 5,
+    "endColumn": 6,
+    "endLine": 16,
     "line": 16,
     "rule": "block-closing-brace-newline-before",
     "severity": "error",
@@ -263,6 +301,8 @@ Array [
   },
   Object {
     "column": 11,
+    "endColumn": 12,
+    "endLine": 7,
     "line": 7,
     "rule": "block-opening-brace-space-before",
     "severity": "error",
@@ -270,6 +310,8 @@ Array [
   },
   Object {
     "column": 10,
+    "endColumn": 11,
+    "endLine": 9,
     "line": 9,
     "rule": "block-opening-brace-space-before",
     "severity": "error",
@@ -277,6 +319,8 @@ Array [
   },
   Object {
     "column": 27,
+    "endColumn": 28,
+    "endLine": 2,
     "line": 2,
     "rule": "declaration-block-trailing-semicolon",
     "severity": "error",
@@ -284,6 +328,8 @@ Array [
   },
   Object {
     "column": 14,
+    "endColumn": 15,
+    "endLine": 8,
     "line": 8,
     "rule": "declaration-block-trailing-semicolon",
     "severity": "error",
@@ -291,6 +337,8 @@ Array [
   },
   Object {
     "column": 1,
+    "endColumn": 6,
+    "endLine": 16,
     "line": 9,
     "rule": "rule-empty-line-before",
     "severity": "error",
@@ -298,6 +346,8 @@ Array [
   },
   Object {
     "column": 5,
+    "endColumn": 6,
+    "endLine": 16,
     "line": 13,
     "rule": "selector-class-pattern",
     "severity": "error",
@@ -305,6 +355,8 @@ Array [
   },
   Object {
     "column": 5,
+    "endColumn": 14,
+    "endLine": 8,
     "line": 8,
     "rule": "indentation",
     "severity": "error",
@@ -312,6 +364,8 @@ Array [
   },
   Object {
     "column": 5,
+    "endColumn": 20,
+    "endLine": 10,
     "line": 10,
     "rule": "indentation",
     "severity": "error",
@@ -319,6 +373,8 @@ Array [
   },
   Object {
     "column": 5,
+    "endColumn": 26,
+    "endLine": 11,
     "line": 11,
     "rule": "indentation",
     "severity": "error",
@@ -326,6 +382,8 @@ Array [
   },
   Object {
     "column": 5,
+    "endColumn": 6,
+    "endLine": 16,
     "line": 13,
     "rule": "indentation",
     "severity": "error",
@@ -333,6 +391,8 @@ Array [
   },
   Object {
     "column": 5,
+    "endColumn": 6,
+    "endLine": 16,
     "line": 16,
     "rule": "indentation",
     "severity": "error",
@@ -340,6 +400,8 @@ Array [
   },
   Object {
     "column": 9,
+    "endColumn": 35,
+    "endLine": 14,
     "line": 14,
     "rule": "indentation",
     "severity": "error",
@@ -347,6 +409,8 @@ Array [
   },
   Object {
     "column": 9,
+    "endColumn": 21,
+    "endLine": 15,
     "line": 15,
     "rule": "indentation",
     "severity": "error",
