@@ -34,7 +34,8 @@ Object {
 input {
 	color: red;
 }
-</style>",
+</style>
+",
       "file": "/brace.svelte",
       "hasBOM": false,
     },
@@ -193,7 +194,8 @@ input {
       "raws": Object {
         "after": "
 ",
-        "codeAfter": "</style>",
+        "codeAfter": "</style>
+",
         "codeBefore": "\\">
 
 
@@ -1139,7 +1141,8 @@ const foo = '<input style=\\"color: blue;\\">'
 input {
 	color: red;
 }
-</style>",
+</style>
+",
       "file": "/test.astro",
       "hasBOM": false,
     },
@@ -1300,7 +1303,8 @@ const foo = '<input style=\\"color: blue;\\">'
       "raws": Object {
         "after": "
 ",
-        "codeAfter": "</style>",
+        "codeAfter": "</style>
+",
         "codeBefore": "\\" />
 
 <style>
