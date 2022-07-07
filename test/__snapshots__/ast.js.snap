@@ -4,12 +4,22 @@ exports[`AST tests brace.svelte ast 1`] = `
 Object {
   "inputs": Array [
     Object {
-      "css": "color: {color}",
+      "css": "color: {color1}",
       "file": "/brace.svelte",
       "hasBOM": false,
     },
     Object {
-      "css": "color: {color}",
+      "css": "color: {color2}",
+      "file": "/brace.svelte",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "color: {color3}",
+      "file": "/brace.svelte",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "color: {color4}",
       "file": "/brace.svelte",
       "hasBOM": false,
     },
@@ -23,12 +33,16 @@ Object {
     },
     Object {
       "css": "<script>
-	let color = '#f00';
+	let color1 = '#f00';
+	let color2 = '#0f0';
+	let color3 = '#00f';
+	let color4 = '#ff0';
 	let value
 </script>
-<input class:over-100={value > 100} bind:value={value} style=\\"color: {color}\\">
-<input class:over-100={  ((value > 100) )  } bind:value={value} style=\\"color: {color}\\">
-
+<input class:over-100={value > 100} bind:value={value} style=\\"color: {color1}\\">
+<input class:over-100={  ((value > 100) )  } bind:value={value} style=\\"color: {color2}\\">
+<input class={ \`\${(value > 100) ? 'foo' : 'bar'}\`  } style=\\"color: {color3}\\">
+<input class={ {foo: (value > 100) ? 'foo' : 'bar'}.foo  } style=\\"color: {color4}\\">
 
 <style>
 input {
@@ -54,25 +68,28 @@ input {
           },
           "source": Object {
             "end": Object {
-              "column": 76,
-              "line": 5,
-              "offset": 126,
+              "column": 77,
+              "line": 8,
+              "offset": 194,
             },
             "inputId": 0,
             "start": Object {
               "column": 63,
-              "line": 5,
-              "offset": 113,
+              "line": 8,
+              "offset": 180,
             },
           },
           "type": "decl",
-          "value": "{color}",
+          "value": "{color1}",
         },
       ],
       "raws": Object {
         "after": "",
         "codeBefore": "<script>
-	let color = '#f00';
+	let color1 = '#f00';
+	let color2 = '#0f0';
+	let color3 = '#00f';
+	let color4 = '#ff0';
 	let value
 </script>
 <input class:over-100={value > 100} bind:value={value} style=\\"",
@@ -83,8 +100,8 @@ input {
         "inputId": 0,
         "start": Object {
           "column": 63,
-          "line": 5,
-          "offset": 113,
+          "line": 8,
+          "offset": 180,
         },
       },
       "type": "root",
@@ -102,19 +119,19 @@ input {
           },
           "source": Object {
             "end": Object {
-              "column": 85,
-              "line": 6,
-              "offset": 214,
+              "column": 86,
+              "line": 9,
+              "offset": 283,
             },
             "inputId": 0,
             "start": Object {
               "column": 72,
-              "line": 6,
-              "offset": 201,
+              "line": 9,
+              "offset": 269,
             },
           },
           "type": "decl",
-          "value": "{color}",
+          "value": "{color2}",
         },
       ],
       "raws": Object {
@@ -128,8 +145,98 @@ input {
         "inputId": 0,
         "start": Object {
           "column": 72,
-          "line": 6,
-          "offset": 201,
+          "line": 9,
+          "offset": 269,
+        },
+      },
+      "type": "root",
+    },
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "prop": "color",
+          "raws": Object {
+            "before": "",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 75,
+              "line": 10,
+              "offset": 361,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 61,
+              "line": 10,
+              "offset": 347,
+            },
+          },
+          "type": "decl",
+          "value": "{color3}",
+        },
+      ],
+      "raws": Object {
+        "after": "",
+        "codeBefore": "\\">
+<input class={ \`\${(value > 100) ? 'foo' : 'bar'}\`  } style=\\"",
+        "semicolon": false,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 61,
+          "line": 10,
+          "offset": 347,
+        },
+      },
+      "type": "root",
+    },
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "prop": "color",
+          "raws": Object {
+            "before": "",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 81,
+              "line": 11,
+              "offset": 445,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 67,
+              "line": 11,
+              "offset": 431,
+            },
+          },
+          "type": "decl",
+          "value": "{color4}",
+        },
+      ],
+      "raws": Object {
+        "after": "",
+        "codeBefore": "\\">
+<input class={ {foo: (value > 100) ? 'foo' : 'bar'}.foo  } style=\\"",
+        "semicolon": false,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 67,
+          "line": 11,
+          "offset": 431,
         },
       },
       "type": "root",
@@ -153,14 +260,14 @@ input {
               "source": Object {
                 "end": Object {
                   "column": 12,
-                  "line": 11,
-                  "offset": 247,
+                  "line": 15,
+                  "offset": 477,
                 },
                 "inputId": 0,
                 "start": Object {
                   "column": 2,
-                  "line": 11,
-                  "offset": 237,
+                  "line": 15,
+                  "offset": 467,
                 },
               },
               "type": "decl",
@@ -178,14 +285,14 @@ input {
           "source": Object {
             "end": Object {
               "column": 1,
-              "line": 12,
-              "offset": 249,
+              "line": 16,
+              "offset": 479,
             },
             "inputId": 0,
             "start": Object {
               "column": 1,
-              "line": 10,
-              "offset": 228,
+              "line": 14,
+              "offset": 458,
             },
           },
           "type": "rule",
@@ -198,7 +305,6 @@ input {
 ",
         "codeBefore": "\\">
 
-
 <style>
 ",
         "semicolon": false,
@@ -208,8 +314,8 @@ input {
         "inputId": 0,
         "start": Object {
           "column": 1,
-          "line": 10,
-          "offset": 228,
+          "line": 14,
+          "offset": 458,
         },
       },
       "type": "root",
