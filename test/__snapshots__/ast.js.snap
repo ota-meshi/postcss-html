@@ -334,6 +334,92 @@ input {
 }
 `;
 
+exports[`AST tests complex.astro ast 1`] = `
+Object {
+  "inputs": Array [
+    Object {
+      "css": "color: #00;",
+      "file": "/complex.astro",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "---
+let value, input, style, bar
+const foo = 100 <input &&( style=\\"color: #ff;\\" )&& bar > 42
+---
+
+<input class={\`\${value > 100 ? 'over-100' : ''}\`} style=\\"color: #00;\\" />
+",
+      "file": "/complex.astro",
+      "hasBOM": false,
+    },
+  ],
+  "nodes": Array [
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "prop": "color",
+          "raws": Object {
+            "before": "",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 68,
+              "line": 6,
+              "offset": 165,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 58,
+              "line": 6,
+              "offset": 155,
+            },
+          },
+          "type": "decl",
+          "value": "#00",
+        },
+      ],
+      "raws": Object {
+        "after": "",
+        "codeAfter": "\\" />
+",
+        "codeBefore": "---
+let value, input, style, bar
+const foo = 100 <input &&( style=\\"color: #ff;\\" )&& bar > 42
+---
+
+<input class={\`\${value > 100 ? 'over-100' : ''}\`} style=\\"",
+        "semicolon": true,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 58,
+          "line": 6,
+          "offset": 155,
+        },
+      },
+      "type": "root",
+    },
+  ],
+  "raws": Object {},
+  "source": Object {
+    "end": undefined,
+    "inputId": 0,
+    "start": Object {
+      "column": 1,
+      "line": 1,
+    },
+  },
+  "type": "document",
+}
+`;
+
 exports[`AST tests empty-tags.html ast 1`] = `
 Object {
   "inputs": Array [
