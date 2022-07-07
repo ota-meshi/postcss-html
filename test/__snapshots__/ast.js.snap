@@ -9,13 +9,32 @@ Object {
       "hasBOM": false,
     },
     Object {
+      "css": "color: {color}",
+      "file": "/brace.svelte",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "input {
+	color: red;
+}
+",
+      "file": "/brace.svelte",
+      "hasBOM": false,
+    },
+    Object {
       "css": "<script>
 	let color = '#f00';
 	let value
 </script>
 <input class:over-100={value > 100} bind:value={value} style=\\"color: {color}\\">
 <input class:over-100={  ((value > 100) )  } bind:value={value} style=\\"color: {color}\\">
-",
+
+
+<style>
+input {
+	color: red;
+}
+</style>",
       "file": "/brace.svelte",
       "hasBOM": false,
     },
@@ -51,9 +70,6 @@ Object {
       ],
       "raws": Object {
         "after": "",
-        "codeAfter": "\\">
-<input class:over-100={  ((value > 100) )  } bind:value={value} style=\\"color: {color}\\">
-",
         "codeBefore": "<script>
 	let color = '#f00';
 	let value
@@ -68,6 +84,130 @@ Object {
           "column": 63,
           "line": 5,
           "offset": 113,
+        },
+      },
+      "type": "root",
+    },
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "prop": "color",
+          "raws": Object {
+            "before": "",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 85,
+              "line": 6,
+              "offset": 214,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 72,
+              "line": 6,
+              "offset": 201,
+            },
+          },
+          "type": "decl",
+          "value": "{color}",
+        },
+      ],
+      "raws": Object {
+        "after": "",
+        "codeBefore": "\\">
+<input class:over-100={  ((value > 100) )  } bind:value={value} style=\\"",
+        "semicolon": false,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 72,
+          "line": 6,
+          "offset": 201,
+        },
+      },
+      "type": "root",
+    },
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "indexes": Object {},
+          "lastEach": 1,
+          "nodes": Array [
+            Object {
+              "prop": "color",
+              "raws": Object {
+                "before": "
+	",
+                "between": ": ",
+              },
+              "source": Object {
+                "end": Object {
+                  "column": 12,
+                  "line": 11,
+                  "offset": 247,
+                },
+                "inputId": 0,
+                "start": Object {
+                  "column": 2,
+                  "line": 11,
+                  "offset": 237,
+                },
+              },
+              "type": "decl",
+              "value": "red",
+            },
+          ],
+          "raws": Object {
+            "after": "
+",
+            "before": "",
+            "between": " ",
+            "semicolon": true,
+          },
+          "selector": "input",
+          "source": Object {
+            "end": Object {
+              "column": 1,
+              "line": 12,
+              "offset": 249,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 1,
+              "line": 10,
+              "offset": 228,
+            },
+          },
+          "type": "rule",
+        },
+      ],
+      "raws": Object {
+        "after": "
+",
+        "codeAfter": "</style>",
+        "codeBefore": "\\">
+
+
+<style>
+",
+        "semicolon": false,
+      },
+      "source": Object {
+        "end": undefined,
+        "inputId": 0,
+        "start": Object {
+          "column": 1,
+          "line": 10,
+          "offset": 228,
         },
       },
       "type": "root",

@@ -96,31 +96,6 @@ const options = {
 const syntax = require('postcss-html')(options);
 ```
 
-## Parse Svelte Components
-
-If you want to parse Svelte components, you need to install `acorn`.
-
-```bash
-npm install acorn --save-dev
-```
-
-Svelte components are similar to HTML, but the expressions used in the template may not be parsed as HTML.
-
-e.g.
-
-```svelte
-<input class:foo={value > 100} style="color: red">
-```
-
-The input element of this template has the following range when parsed as HTML.
-Therefore, the style attribute is not recognized as an attribute.
-
-```html
-<input class:foo={value >
-```
-
-`postcss-html` will try to parse the template well if it finds the `acorn` package needed to parse `.svelte`.
-
 ## Turning PostCSS off from within your HTML
 
 PostCSS can be temporarily turned off by using special comments in your HTML. For example:
