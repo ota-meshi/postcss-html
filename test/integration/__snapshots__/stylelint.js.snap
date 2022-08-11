@@ -260,8 +260,8 @@ Array [
   },
   Object {
     "column": 1,
-    "endColumn": 2,
-    "endLine": 49,
+    "endColumn": 17,
+    "endLine": 46,
     "line": 46,
     "rule": "selector-class-pattern",
     "severity": "error",
@@ -346,8 +346,8 @@ Array [
   },
   Object {
     "column": 5,
-    "endColumn": 6,
-    "endLine": 16,
+    "endColumn": 21,
+    "endLine": 13,
     "line": 13,
     "rule": "selector-class-pattern",
     "severity": "error",
