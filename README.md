@@ -15,7 +15,7 @@
 
 - [Vue Single-File Components](https://vuejs.org/guide/scaling-up/sfc.html)
 - [Svelte Components](https://svelte.dev/docs#component-format)
-- [Astro Components](https://docs.astro.build/core-concepts/astro-components/)
+- [Astro Components](https://docs.astro.build/en/core-concepts/astro-components/)
 - [PHP](http://php.net)
 - [Quick App](https://doc.quickapp.cn/framework/source-file.html)
 - [XSLT](https://www.w3.org/TR/xslt-30/)
