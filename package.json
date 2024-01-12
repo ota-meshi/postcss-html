@@ -62,7 +62,7 @@
     "postcss-safe-parser": "^6.0.0"
   },
   "devDependencies": {
-    "@ota-meshi/eslint-plugin": "^0.13.0",
+    "@ota-meshi/eslint-plugin": "^0.15.0",
     "autoprefixer": "^10.3.7",
     "chai": "~4.3.4",
     "codecov": "^3.8.3",
@@ -71,6 +71,7 @@
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-json-schema-validator": "^4.0.0",
     "eslint-plugin-jsonc": "^2.0.0",
+    "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-node-dependencies": "^0.11.0",
     "eslint-plugin-prettier": "^4.0.0",
