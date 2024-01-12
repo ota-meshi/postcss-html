@@ -29,7 +29,7 @@ describe("Root node tests", () => {
 				"  .c",
 				"    color red",
 				"",
-			].join("\n")
+			].join("\n"),
 		);
 	});
 });

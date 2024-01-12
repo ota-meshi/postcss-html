@@ -12,7 +12,7 @@ chai.use(jestSnapshotPlugin());
 
 const FIXTURE_ROOT = path.resolve(
 	__dirname,
-	"../../test-fixtures/integration/stylelint"
+	"../../test-fixtures/integration/stylelint",
 );
 
 describe("Integration with stylelint", () => {
@@ -29,7 +29,7 @@ describe("Integration with stylelint", () => {
 					.then((result) => {
 						const actual = result.results[0].warnings;
 						chai.expect(actual).toMatchSnapshot();
-					})
+					}),
 			);
 		});
 		describe(`stylelint --fix with html`, () => {
@@ -45,7 +45,7 @@ describe("Integration with stylelint", () => {
 					.then((result) => {
 						const actual = result.output;
 						chai.expect(actual).toMatchSnapshot();
-					})
+					}),
 			);
 		});
 	}

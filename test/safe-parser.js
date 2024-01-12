@@ -15,7 +15,7 @@ describe("postcss-safe-parser", () => {
 			].join("\n"),
 			{
 				from: "quickapp.ux",
-			}
+			},
 		);
 
 		expect(document.nodes).to.have.lengthOf(1);

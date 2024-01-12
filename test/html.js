@@ -72,7 +72,7 @@ describe("html tests", () => {
 						"b {}",
 						"</style>",
 						"</html>",
-					].join("\n")
+					].join("\n"),
 				);
 			});
 	});
@@ -110,7 +110,7 @@ describe("html tests", () => {
 						"}",
 						"</style>",
 						"</html>",
-					].join("\n")
+					].join("\n"),
 				);
 			});
 	});
@@ -124,7 +124,7 @@ describe("html tests", () => {
 						root.last,
 						postcss.rule({
 							selector: "b",
-						})
+						}),
 					);
 				},
 			};
@@ -168,7 +168,7 @@ describe("html tests", () => {
 						"}",
 						"</style>",
 						"</html>",
-					].join("\n")
+					].join("\n"),
 				);
 			});
 	});
@@ -182,7 +182,7 @@ describe("html tests", () => {
 						root.first,
 						postcss.rule({
 							selector: "b",
-						})
+						}),
 					);
 				},
 			};
@@ -224,7 +224,7 @@ describe("html tests", () => {
 						"}b {}",
 						"</style>",
 						"</html>",
-					].join("\n")
+					].join("\n"),
 				);
 			});
 	});
@@ -265,7 +265,7 @@ describe("html tests", () => {
 						"}",
 						"</style>",
 						"</html>",
-					].join("\n")
+					].join("\n"),
 				);
 			});
 	});
@@ -308,7 +308,7 @@ describe("html tests", () => {
 						"}b {}",
 						"</style>",
 						"</html>",
-					].join("\n")
+					].join("\n"),
 				);
 			});
 	});
@@ -334,7 +334,7 @@ describe("html tests", () => {
 			.then((result) => {
 				expect(result.root.source).to.haveOwnProperty("lang", "html");
 				expect(result.content).to.equal(
-					["<html>", "<style>", "b {}</style>", "</html>"].join("\n")
+					["<html>", "<style>", "b {}</style>", "</html>"].join("\n"),
 				);
 			});
 	});
@@ -368,7 +368,7 @@ describe("html tests", () => {
 						//
 						"<style>b {}</style>",
 						"<style>b {}</style>",
-					].join("\n")
+					].join("\n"),
 				);
 			});
 	});

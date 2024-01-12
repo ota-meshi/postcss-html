@@ -132,20 +132,20 @@ a { color: red; }
 							start: locData.sourceLoc.start,
 							end: locData.sourceLoc.end || locData.sourceLoc.start,
 						},
-						{ columnOffset: 1 }
+						{ columnOffset: 1 },
 					);
 				}
 			}
 
 			function findLoc(astJson, locName) {
 				let locData = astJson.locations.find((l) =>
-					locInPoint(l[locName], position)
+					locInPoint(l[locName], position),
 				);
 				let nextLocData;
 				while (
 					locData &&
 					(nextLocData = locData.locations.find((l) =>
-						locInPoint(l[locName], position)
+						locInPoint(l[locName], position),
 					))
 				) {
 					locData = nextLocData;
@@ -297,7 +297,7 @@ function processValue(options, ctx, value) {
 					key !== "source" &&
 					key !== "parent" &&
 					key !== "document" &&
-					key !== "type"
+					key !== "type",
 			);
 			if (typeEntry) entries.unshift(typeEntry);
 			entries.push(...locEntries);

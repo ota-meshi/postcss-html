@@ -37,7 +37,7 @@ describe("vue tests", () => {
 				{
 					syntax,
 					from: "autoprefixer.vue",
-				}
+				},
 			)
 			.then((result) => {
 				expect(result.content).to.equal(
@@ -64,7 +64,7 @@ describe("vue tests", () => {
 						"<script lang='coffee'>",
 						"should skip coffeescript)))",
 						"</script>",
-					].join("\n")
+					].join("\n"),
 				);
 			});
 	});
@@ -80,7 +80,7 @@ describe("vue tests", () => {
 				{
 					syntax,
 					from: "empty.vue",
-				}
+				},
 			)
 			.then((result) => {
 				expect(result.root.nodes).to.have.lengthOf(2);

@@ -10,7 +10,7 @@ function* listupFixtures(rootDir) {
 		const filepath = path.join(rootDir, filename);
 		if (fs.statSync(filepath).isDirectory()) {
 			for (const { filepath: childFilepath, content } of listupFixtures(
-				filepath
+				filepath,
 			)) {
 				yield {
 					filename: childFilepath.slice(rootDir.length),
