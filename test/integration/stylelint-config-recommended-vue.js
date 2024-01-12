@@ -8,7 +8,7 @@ const STYLELINT = `.${path.sep}node_modules${path.sep}.bin${path.sep}stylelint`;
 
 const FIXTURE_ROOT = path.resolve(
 	__dirname,
-	"../../test-fixtures/integration/stylelint-config-recommended-vue"
+	"../../test-fixtures/integration/stylelint-config-recommended-vue",
 );
 
 describe("Integration with stylelint-config-recommended-vue", () => {

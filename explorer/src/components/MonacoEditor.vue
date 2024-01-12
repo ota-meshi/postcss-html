@@ -4,7 +4,7 @@
 
 <script>
 const monacoScript = Array.from(
-	window.document.head.querySelectorAll("script")
+	window.document.head.querySelectorAll("script"),
 ).find((script) => script.src && script.src.includes("monaco"));
 window.require.config({
 	paths: {
@@ -66,7 +66,7 @@ export default {
 				renderWhitespace: "boundary",
 				scrollBeyondLastLine: false,
 			},
-			vm.options
+			vm.options,
 		);
 
 		vm.editor = monaco.editor.create(vm.$el, options);

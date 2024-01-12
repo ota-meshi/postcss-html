@@ -12,7 +12,7 @@ describe("template interpolation", () => {
 			].join("\n"),
 			{
 				from: "quickapp.ux",
-			}
+			},
 		);
 
 		expect(document.nodes).to.have.lengthOf(1);
@@ -36,7 +36,7 @@ describe("template interpolation", () => {
 			].join("\n"),
 			{
 				from: "quickapp.ux",
-			}
+			},
 		);
 
 		expect(document.nodes).to.have.lengthOf(1);
@@ -62,7 +62,7 @@ describe("template interpolation", () => {
 			].join("\n"),
 			{
 				from: "quickapp.ux",
-			}
+			},
 		);
 
 		expect(document.nodes).to.have.lengthOf(2);
@@ -92,7 +92,7 @@ describe("template interpolation", () => {
 			].join("\n"),
 			{
 				from: "vue-sfc.vue",
-			}
+			},
 		);
 
 		expect(document.nodes).to.have.lengthOf(2);
@@ -117,7 +117,7 @@ describe("template interpolation", () => {
 			['<a style="display: { dynamicProperties }">', "</a>"].join("\n"),
 			{
 				from: "app.svelte",
-			}
+			},
 		);
 		expect(document.nodes).to.have.lengthOf(1);
 		expect(document.first.source).to.have.property("lang", "custom-template");

@@ -75,7 +75,7 @@ describe("API", () => {
 				].join("\n"),
 				{
 					from: "SyntaxError.html",
-				}
+				},
 			);
 		})
 			.to.throw(/SyntaxError.html:2:8: Unclosed block\b/)
@@ -93,7 +93,7 @@ describe("API", () => {
 				].join("\n"),
 				{
 					from: "SyntaxError.html",
-				}
+				},
 			);
 		})
 			.to.throw(/SyntaxError.html:2:8: Unknown word\b/)
