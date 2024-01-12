@@ -5,6 +5,7 @@
   "description": "",
   "devDependencies": {
     "stylelint": "^14.0.0",
+    "stylelint-config-recommended": "^10",
     "stylelint-config-recommended-vue": ">=0.0.5",
     "postcss-html": "file:../../../"
   },
