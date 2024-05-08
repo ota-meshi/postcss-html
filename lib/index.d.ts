@@ -4,5 +4,5 @@ type PostcssHtml = {
 	(options?: Record<string, any>): Syntax;
 } & Syntax;
 
-const postHtml: PostcssHtml;
-export = postHtml;
+const postcssHtml: PostcssHtml;
+export = postcssHtml;
