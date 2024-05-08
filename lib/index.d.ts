@@ -1,3 +1,8 @@
 import type { Syntax } from "postcss";
-const postcssHtml: (options?: Record<string, any>) => Syntax;
-export = postcssHtml;
+
+type PostcssHtml = {
+	(options?: Record<string, any>): Syntax;
+} & Syntax;
+
+const postHtml: PostcssHtml;
+export = postHtml;
