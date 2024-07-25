@@ -64,7 +64,7 @@
   "devDependencies": {
     "@ota-meshi/eslint-plugin": "^0.15.0",
     "autoprefixer": "^10.3.7",
-    "chai": "~4.4.0",
+    "chai": "~4.5.0",
     "codecov": "^3.8.3",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^9.0.0",
