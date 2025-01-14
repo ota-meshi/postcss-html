@@ -282,19 +282,19 @@ Array [
 exports[`Integration with stylelint stylelint with html test-with-stylus.vue 1`] = `
 Array [
   Object {
-    "column": 14,
-    "endColumn": 15,
-    "endLine": 8,
-    "line": 8,
+    "column": 1,
+    "endColumn": 2,
+    "endLine": 9,
+    "line": 9,
     "rule": "block-closing-brace-newline-before",
     "severity": "error",
     "text": "Expected newline before \\"}\\" of a multi-line block (block-closing-brace-newline-before)",
   },
   Object {
-    "column": 5,
-    "endColumn": 6,
-    "endLine": 16,
-    "line": 16,
+    "column": 4,
+    "endColumn": 5,
+    "endLine": 17,
+    "line": 17,
     "rule": "block-closing-brace-newline-before",
     "severity": "error",
     "text": "Expected newline before \\"}\\" of a multi-line block (block-closing-brace-newline-before)",
@@ -328,8 +328,8 @@ Array [
   },
   Object {
     "column": 14,
-    "endColumn": 15,
-    "endLine": 8,
+    "endColumn": 1,
+    "endLine": 9,
     "line": 8,
     "rule": "declaration-block-trailing-semicolon",
     "severity": "error",
