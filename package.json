@@ -58,7 +58,7 @@
   "dependencies": {
     "htmlparser2": "^8.0.0",
     "js-tokens": "^9.0.0",
-    "postcss": "^8.4.0",
+    "postcss": "^8.5.0",
     "postcss-safe-parser": "^6.0.0"
   },
   "devDependencies": {
