@@ -14,6 +14,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           registry-url: "https://registry.npmjs.org"
+          node-version: "lts/*"
       - name: Install Packages
         run: npm i
       - name: test
@@ -22,5 +23,3 @@ jobs:
         run: npx can-npm-publish
       - name: release
         run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
