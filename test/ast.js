@@ -18,7 +18,14 @@ describe("AST tests", () => {
 					from: `/${filename}`,
 				});
 				for (const root of document.nodes) {
-					if (document === root.document) root.document = "$document";
+					if (document === root.document) {
+						Object.defineProperty(root, "document", {
+							configurable: true,
+							enumerable: true,
+							writable: true,
+							value: "$document",
+						});
+					}
 				}
 				chai.expect(document).toMatchSnapshot();
 			});
