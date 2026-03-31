@@ -2346,6 +2346,328 @@ const buttonPointerEvents = computed(() =>
 }
 `;
 
+exports[`AST tests test.wxml ast 1`] = `
+Object {
+  "inputs": Array [
+    Object {
+      "css": "font-size: 10rpx; color: red;",
+      "file": "/test.wxml",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "font-size: 10rpx; color: {{ color }};",
+      "file": "/test.wxml",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "font-weight: bold; font-size: {{ fontSize }}rpx; color: {{ color }}; background-image: url('{{ backgroundColor }}');",
+      "file": "/test.wxml",
+      "hasBOM": false,
+    },
+    Object {
+      "css": "<wxs src=\\"./foo.wxs\\"></wxs>
+<wxs module=\\"bar\\">
+  var x = 1
+  module.exports = { x: x }
+</wxs>
+<wxs module=\\"baz\\">
+  var style = \\"color: red\\"
+  var tpl = '<view style=\\"color: blue;\\"></view>'
+</wxs>
+<view>
+  <text style=\\"font-size: 10rpx; color: red;\\"></text>
+  <view style=\\"{{ style }}\\"></view>
+  <view style=\\"font-size: 10rpx; color: {{ color }};\\"></view>
+  <view style=\\"font-weight: bold; font-size: {{ fontSize }}rpx; color: {{ color }}; background-image: url('{{ backgroundColor }}');\\"></view>
+</view>",
+      "file": "/test.wxml",
+      "hasBOM": false,
+    },
+  ],
+  "nodes": Array [
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "prop": "font-size",
+          "raws": Object {
+            "before": "",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 32,
+              "line": 11,
+              "offset": 235,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 16,
+              "line": 11,
+              "offset": 218,
+            },
+          },
+          "type": "decl",
+          "value": "10rpx",
+        },
+        Object {
+          "prop": "color",
+          "raws": Object {
+            "before": " ",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 44,
+              "line": 11,
+              "offset": 247,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 34,
+              "line": 11,
+              "offset": 236,
+            },
+          },
+          "type": "decl",
+          "value": "red",
+        },
+      ],
+      "raws": Object {
+        "after": "",
+        "codeBefore": "<wxs src=\\"./foo.wxs\\"></wxs>
+<wxs module=\\"bar\\">
+  var x = 1
+  module.exports = { x: x }
+</wxs>
+<wxs module=\\"baz\\">
+  var style = \\"color: red\\"
+  var tpl = '<view style=\\"color: blue;\\"></view>'
+</wxs>
+<view>
+  <text style=\\"",
+        "semicolon": true,
+      },
+      "source": Object {
+        "end": Object {
+          "column": 45,
+          "line": 11,
+          "offset": 247,
+        },
+        "inputId": 0,
+        "start": Object {
+          "column": 16,
+          "line": 11,
+          "offset": 218,
+        },
+      },
+      "type": "root",
+    },
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "prop": "font-size",
+          "raws": Object {
+            "before": "",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 32,
+              "line": 13,
+              "offset": 325,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 16,
+              "line": 13,
+              "offset": 308,
+            },
+          },
+          "type": "decl",
+          "value": "10rpx",
+        },
+        Object {
+          "prop": "color",
+          "raws": Object {
+            "before": " ",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 52,
+              "line": 13,
+              "offset": 345,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 34,
+              "line": 13,
+              "offset": 326,
+            },
+          },
+          "type": "decl",
+          "value": "{{ color }}",
+        },
+      ],
+      "raws": Object {
+        "after": "",
+        "codeBefore": "\\"></text>
+  <view style=\\"{{ style }}\\"></view>
+  <view style=\\"",
+        "semicolon": true,
+      },
+      "source": Object {
+        "end": Object {
+          "column": 53,
+          "line": 13,
+          "offset": 345,
+        },
+        "inputId": 0,
+        "start": Object {
+          "column": 16,
+          "line": 13,
+          "offset": 308,
+        },
+      },
+      "type": "root",
+    },
+    Object {
+      "document": "$document",
+      "indexes": Object {},
+      "lastEach": 1,
+      "nodes": Array [
+        Object {
+          "prop": "font-weight",
+          "raws": Object {
+            "before": "",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 33,
+              "line": 14,
+              "offset": 388,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 16,
+              "line": 14,
+              "offset": 370,
+            },
+          },
+          "type": "decl",
+          "value": "bold",
+        },
+        Object {
+          "prop": "font-size",
+          "raws": Object {
+            "before": " ",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 63,
+              "line": 14,
+              "offset": 418,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 35,
+              "line": 14,
+              "offset": 389,
+            },
+          },
+          "type": "decl",
+          "value": "{{ fontSize }}rpx",
+        },
+        Object {
+          "prop": "color",
+          "raws": Object {
+            "before": " ",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 83,
+              "line": 14,
+              "offset": 438,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 65,
+              "line": 14,
+              "offset": 419,
+            },
+          },
+          "type": "decl",
+          "value": "{{ color }}",
+        },
+        Object {
+          "prop": "background-image",
+          "raws": Object {
+            "before": " ",
+            "between": ": ",
+          },
+          "source": Object {
+            "end": Object {
+              "column": 131,
+              "line": 14,
+              "offset": 486,
+            },
+            "inputId": 0,
+            "start": Object {
+              "column": 85,
+              "line": 14,
+              "offset": 439,
+            },
+          },
+          "type": "decl",
+          "value": "url('{{ backgroundColor }}')",
+        },
+      ],
+      "raws": Object {
+        "after": "",
+        "codeAfter": "\\"></view>
+</view>",
+        "codeBefore": "\\"></view>
+  <view style=\\"",
+        "semicolon": true,
+      },
+      "source": Object {
+        "end": Object {
+          "column": 132,
+          "line": 14,
+          "offset": 486,
+        },
+        "inputId": 0,
+        "start": Object {
+          "column": 16,
+          "line": 14,
+          "offset": 370,
+        },
+      },
+      "type": "root",
+    },
+  ],
+  "raws": Object {},
+  "source": Object {
+    "end": undefined,
+    "inputId": 0,
+    "start": Object {
+      "column": 1,
+      "line": 1,
+    },
+  },
+  "type": "document",
+}
+`;
+
 exports[`AST tests test2.svelte ast 1`] = `
 Object {
   "inputs": Array [

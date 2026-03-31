@@ -87,6 +87,18 @@ const buttonPointerEvents = computed(() =>
 "
 `;
 
+exports[`Integration with stylelint stylelint --fix with html test.wxml 1`] = `
+"<wxs module=\\"foo\\">
+  var style = \\"color: red\\"
+  var tpl = '<view style=\\"color: blue;\\"></view>'
+</wxs>
+<view>
+  <text style=\\"font-size: 10rpx; color: red;\\"></text>
+  <view style=\\"{{ style }}\\"></view>
+  <view style=\\"font-size: 10rpx; color: {{ color }};\\"></view>
+</view>"
+`;
+
 exports[`Integration with stylelint stylelint --fix with html test-with-stylus.vue 1`] = `
 "<template>
   <div style=\\"display: flex;\\"/>
@@ -275,6 +287,29 @@ Array [
     "rule": "value-keyword-case",
     "severity": "error",
     "text": "Expected \\"buttonColor\\" to be \\"buttoncolor\\" (value-keyword-case)",
+  },
+]
+`;
+
+exports[`Integration with stylelint stylelint with html test.wxml 1`] = `
+Array [
+  Object {
+    "column": 29,
+    "endColumn": 32,
+    "endLine": 6,
+    "line": 6,
+    "rule": "unit-no-unknown",
+    "severity": "error",
+    "text": "Unexpected unknown unit \\"rpx\\" (unit-no-unknown)",
+  },
+  Object {
+    "column": 29,
+    "endColumn": 32,
+    "endLine": 8,
+    "line": 8,
+    "rule": "unit-no-unknown",
+    "severity": "error",
+    "text": "Unexpected unknown unit \\"rpx\\" (unit-no-unknown)",
   },
 ]
 `;

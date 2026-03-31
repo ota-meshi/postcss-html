@@ -129,4 +129,38 @@ describe("template interpolation", () => {
 		expect(root.first).to.have.property("prop", "display");
 		expect(root.first).to.have.property("value", "{ dynamicProperties }");
 	});
+
+	it("WXML", () => {
+		const document = syntax.parse(
+			[
+				'<wxs module="baz">',
+				'\tvar style = "color: red"',
+				"\tvar tpl = '<view style=\"color: blue;\"></view>'",
+				"</wxs>",
+				"<view>",
+				"\t<view style=\"font-weight: bold; font-size: {{ fontSize }}rpx; color: {{ color }}; background-image: url('{{ backgroundColor }}');\"></view>",
+				"</view>",
+			].join("\n"),
+			{
+				from: "app.wxml",
+			},
+		);
+		expect(document.nodes).to.have.lengthOf(1);
+		expect(document.first.source).to.have.property("lang", "custom-template");
+		const root = document.first;
+		expect(root.nodes).to.have.lengthOf(4);
+		root.nodes.forEach((node) => {
+			expect(node).to.have.property("type", "decl");
+		});
+		expect(root.nodes[0]).to.include({ prop: "font-weight", value: "bold" });
+		expect(root.nodes[1]).to.include({
+			prop: "font-size",
+			value: "{{ fontSize }}rpx",
+		});
+		expect(root.nodes[2]).to.include({ prop: "color", value: "{{ color }}" });
+		expect(root.nodes[3]).to.include({
+			prop: "background-image",
+			value: "url('{{ backgroundColor }}')",
+		});
+	});
 });

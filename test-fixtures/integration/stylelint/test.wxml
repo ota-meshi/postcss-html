@@ -1,0 +1,9 @@
+<wxs module="foo">
+  var style = "color: red"
+  var tpl = '<view style="color: blue;"></view>'
+</wxs>
+<view>
+  <text style="font-size: 10rpx; color: red;"></text>
+  <view style="{{ style }}"></view>
+  <view style="font-size: 10rpx; color: {{ color }};"></view>
+</view>

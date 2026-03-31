@@ -1,0 +1,15 @@
+<wxs src="./foo.wxs"></wxs>
+<wxs module="bar">
+  var x = 1
+  module.exports = { x: x }
+</wxs>
+<wxs module="baz">
+  var style = "color: red"
+  var tpl = '<view style="color: blue;"></view>'
+</wxs>
+<view>
+  <text style="font-size: 10rpx; color: red;"></text>
+  <view style="{{ style }}"></view>
+  <view style="font-size: 10rpx; color: {{ color }};"></view>
+  <view style="font-weight: bold; font-size: {{ fontSize }}rpx; color: {{ color }}; background-image: url('{{ backgroundColor }}');"></view>
+</view>
