@@ -95,12 +95,12 @@ exports[`Integration with stylelint stylelint --fix with html test-with-stylus.v
 </script>
 <style lang=\\"stylus\\">
 .add-button 
-  color red;
+  color: red;
 
 
 .todo-list 
-  list-style none
-  background-color #eef
+  list-style: none
+  background-color: #eef
 
   .todo-item--done {
     background-color: #3fb983;

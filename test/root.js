@@ -23,11 +23,11 @@ describe("Root node tests", () => {
 		expect(document.nodes[0].toString()).equal(
 			[
 				"a",
-				"  display flex",
+				"  display: flex",
 				".b",
-				"  color red",
+				"  color: red",
 				"  .c",
-				"    color red",
+				"    color: red",
 				"",
 			].join("\n"),
 		);
