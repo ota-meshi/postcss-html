@@ -8,11 +8,11 @@ describe("Root node tests", () => {
 		const html = [
 			'<style lang="stylus">',
 			"a",
-			"  display flex",
+			"  display: flex",
 			".b",
-			"  color red",
+			"  color: red",
 			"  .c",
-			"    color red",
+			"    color: red",
 			"</style>",
 		].join("\n");
 		const document = syntax.parse(html, {
