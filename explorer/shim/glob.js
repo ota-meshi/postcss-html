@@ -1,3 +1,5 @@
+"use strict";
+
 const glob = {};
 module.exports = new Proxy(glob, {
 	get(_t, p) {

@@ -1,7 +1,7 @@
-"use strict";
+import chai from "chai";
+import syntax from "postcss-html";
 
-const expect = require("chai").expect;
-const syntax = require("../");
+const expect = chai.expect;
 
 describe("postcss-safe-parser", () => {
 	it("Quick App", () => {

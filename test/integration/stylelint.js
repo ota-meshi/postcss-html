@@ -1,20 +1,17 @@
-"use strict";
+import { createRequire } from "node:module";
+import { fileURLToPath } from "node:url";
+import chai from "chai";
+import { jestSnapshotPlugin } from "mocha-chai-jest-snapshot";
+import stylelint from "stylelint";
+import stylelintConfig from "stylelint-config-standard";
+import { listupFixtures } from "../utils.js";
 
-const path = require("path");
-const chai = require("chai");
-const { jestSnapshotPlugin } = require("mocha-chai-jest-snapshot");
-const stylelint = require("stylelint");
-// stylelint-config-standard v40+ is ESM-only; require() returns the module
-// namespace object, so the config itself is on `default`.
-const stylelintConfig = require("stylelint-config-standard").default;
-const { listupFixtures } = require("../utils");
-const customSyntax = require.resolve("../..");
+const customSyntax = createRequire(import.meta.url).resolve("postcss-html");
 
 chai.use(jestSnapshotPlugin());
 
-const FIXTURE_ROOT = path.resolve(
-	__dirname,
-	"../../test-fixtures/integration/stylelint",
+const FIXTURE_ROOT = fileURLToPath(
+	new URL("../../test-fixtures/integration/stylelint", import.meta.url),
 );
 
 describe("Integration with stylelint", () => {

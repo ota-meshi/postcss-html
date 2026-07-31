@@ -1,14 +1,15 @@
-"use strict";
-
-const { fail } = require("assert");
-const cp = require("child_process");
-const path = require("path");
+import { fail } from "node:assert";
+import cp from "node:child_process";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const STYLELINT = `.${path.sep}node_modules${path.sep}.bin${path.sep}stylelint`;
 
-const FIXTURE_ROOT = path.resolve(
-	__dirname,
-	"../../test-fixtures/integration/stylelint-config-recommended-vue",
+const FIXTURE_ROOT = fileURLToPath(
+	new URL(
+		"../../test-fixtures/integration/stylelint-config-recommended-vue",
+		import.meta.url,
+	),
 );
 
 describe("Integration with stylelint-config-recommended-vue", () => {

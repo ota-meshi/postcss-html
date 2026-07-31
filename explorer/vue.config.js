@@ -1,3 +1,5 @@
+"use strict";
+
 const webpack = require("webpack");
 module.exports = {
 	publicPath: "/postcss-html/",
@@ -21,6 +23,11 @@ module.exports = {
 				},
 			},
 			plugins: [
+				// Strip the `node:` scheme so the aliases above also apply to
+				// `node:module`, `node:path`, etc.
+				new webpack.NormalModuleReplacementPlugin(/^node:/, (resource) => {
+					resource.request = resource.request.replace(/^node:/, "");
+				}),
 				new webpack.DefinePlugin({
 					"process.version": JSON.stringify(process.version),
 					// process: JSON.stringify(process),

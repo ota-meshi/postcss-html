@@ -1,8 +1,8 @@
-"use strict";
+import chai from "chai";
+import postcss from "postcss";
+import syntax from "postcss-html";
 
-const expect = require("chai").expect;
-const postcss = require("postcss");
-const syntax = require("../");
+const expect = chai.expect;
 
 describe("XSLT tests", () => {
 	// https://msdn.microsoft.com/en-us/library/ms764661(v=vs.85).aspx

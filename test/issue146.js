@@ -1,7 +1,5 @@
-"use strict";
-
-const chai = require("chai");
-const syntax = require("../");
+import chai from "chai";
+import syntax from "postcss-html";
 
 // https://github.com/ota-meshi/postcss-html/issues/146
 describe("issue 146 test", () => {

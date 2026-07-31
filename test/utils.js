@@ -1,11 +1,7 @@
-"use strict";
+import fs from "node:fs";
+import path from "node:path";
 
-const path = require("path");
-const fs = require("fs");
-
-module.exports = { listupFixtures };
-
-function* listupFixtures(rootDir) {
+export function* listupFixtures(rootDir) {
 	for (const filename of fs.readdirSync(rootDir)) {
 		const filepath = path.join(rootDir, filename);
 		if (fs.statSync(filepath).isDirectory()) {
