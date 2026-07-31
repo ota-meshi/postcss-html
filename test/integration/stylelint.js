@@ -4,7 +4,9 @@ const path = require("path");
 const chai = require("chai");
 const { jestSnapshotPlugin } = require("mocha-chai-jest-snapshot");
 const stylelint = require("stylelint");
-const stylelintConfig = require("stylelint-config-standard");
+// stylelint-config-standard v40+ is ESM-only; require() returns the module
+// namespace object, so the config itself is on `default`.
+const stylelintConfig = require("stylelint-config-standard").default;
 const { listupFixtures } = require("../utils");
 const customSyntax = require.resolve("../..");
 
@@ -43,7 +45,9 @@ describe("Integration with stylelint", () => {
 						fix: true,
 					})
 					.then((result) => {
-						const actual = result.output;
+						// stylelint v16 deprecated `output` and v17 removed it;
+						// the fixed code is now on `code`.
+						const actual = result.code;
 						chai.expect(actual).toMatchSnapshot();
 					}),
 			);
