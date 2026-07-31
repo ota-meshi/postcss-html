@@ -1,7 +1,5 @@
-"use strict";
-
-const expect = require("chai").expect;
-const syntax = require("../");
+import { expect } from "chai";
+import syntax from "postcss-html";
 
 describe("template interpolation", () => {
 	it("PHP", () => {

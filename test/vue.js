@@ -1,9 +1,8 @@
-"use strict";
-
-const expect = require("chai").expect;
-const autoprefixer = require("autoprefixer");
-const postcss = require("postcss");
-const syntax = require("../")();
+import autoprefixer from "autoprefixer";
+import { expect } from "chai";
+import postcss from "postcss";
+import postcssHtml from "postcss-html";
+const syntax = postcssHtml();
 
 describe("vue tests", () => {
 	it("autoprefixer", () => {

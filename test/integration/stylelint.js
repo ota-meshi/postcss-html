@@ -1,18 +1,17 @@
-"use strict";
+import { createRequire } from "node:module";
+import { fileURLToPath } from "node:url";
+import { expect, use } from "chai";
+import { jestSnapshotPlugin } from "mocha-chai-jest-snapshot";
+import stylelint from "stylelint";
+import stylelintConfig from "stylelint-config-standard";
+import { listupFixtures } from "../utils.js";
 
-const path = require("path");
-const chai = require("chai");
-const { jestSnapshotPlugin } = require("mocha-chai-jest-snapshot");
-const stylelint = require("stylelint");
-const stylelintConfig = require("stylelint-config-standard");
-const { listupFixtures } = require("../utils");
-const customSyntax = require.resolve("../..");
+const customSyntax = createRequire(import.meta.url).resolve("postcss-html");
 
-chai.use(jestSnapshotPlugin());
+use(jestSnapshotPlugin());
 
-const FIXTURE_ROOT = path.resolve(
-	__dirname,
-	"../../test-fixtures/integration/stylelint",
+const FIXTURE_ROOT = fileURLToPath(
+	new URL("../../test-fixtures/integration/stylelint", import.meta.url),
 );
 
 describe("Integration with stylelint", () => {
@@ -28,7 +27,7 @@ describe("Integration with stylelint", () => {
 					})
 					.then((result) => {
 						const actual = result.results[0].warnings;
-						chai.expect(actual).toMatchSnapshot();
+						expect(actual).toMatchSnapshot();
 					}),
 			);
 		});
@@ -43,8 +42,10 @@ describe("Integration with stylelint", () => {
 						fix: true,
 					})
 					.then((result) => {
-						const actual = result.output;
-						chai.expect(actual).toMatchSnapshot();
+						// stylelint v16 deprecated `output` and v17 removed it;
+						// the fixed code is now on `code`.
+						const actual = result.code;
+						expect(actual).toMatchSnapshot();
 					}),
 			);
 		});

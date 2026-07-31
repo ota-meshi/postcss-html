@@ -5,9 +5,9 @@ exports[`Integration with stylelint stylelint --fix with html lang-postcss.vue 1
 </template>
 <style lang=\\"postcss\\">
 a {
-  a {
-    color: red;
-  }
+a {
+color: red
+}
 }
 </style>
 "
@@ -18,13 +18,13 @@ exports[`Integration with stylelint stylelint --fix with html test.html 1`] = `
 <html>
 	<head>
 		<style type=\\"text/css\\">
-      a {
-        display: flex;
-      }
+			a {
+				display: flex;
+			}
 		</style>
 	</head>
 	<body>
-		<div style=\\"font-family: \\"serif serif\\";\\"></div>
+		<div style=\\"font-family: \\"serif serif\\"\\"></div>
 	</body>
 </html>
 "
@@ -89,124 +89,62 @@ const buttonPointerEvents = computed(() =>
 
 exports[`Integration with stylelint stylelint --fix with html test-with-stylus.vue 1`] = `
 "<template>
-  <div style=\\"display: flex;\\"/>
+  <div style=\\"display: flex\\"/>
 </template>
 <script>
 </script>
 <style lang=\\"stylus\\">
-.add-button 
-  color red;
+.add-button
+    color red
 
+.todo-list
+    list-style none
+    background-color #eef
 
-.todo-list 
-  list-style none
-  background-color #eef
-
-  .todo-item--done {
-    background-color: #3fb983;
-    color: #fff;
-  }
-
+    .todo-item--done {
+        background-color: #3fb983;
+        color: #fff;
+    }
 </style>
 "
 `;
 
-exports[`Integration with stylelint stylelint with html lang-postcss.vue 1`] = `
-Array [
-  Object {
-    "column": 10,
-    "endColumn": 11,
-    "endLine": 6,
-    "line": 6,
-    "rule": "declaration-block-trailing-semicolon",
-    "severity": "error",
-    "text": "Expected a trailing semicolon (declaration-block-trailing-semicolon)",
-  },
-  Object {
-    "column": 1,
-    "endColumn": 2,
-    "endLine": 7,
-    "line": 5,
-    "rule": "indentation",
-    "severity": "error",
-    "text": "Expected indentation of 2 spaces (indentation)",
-  },
-  Object {
-    "column": 1,
-    "endColumn": 2,
-    "endLine": 7,
-    "line": 7,
-    "rule": "indentation",
-    "severity": "error",
-    "text": "Expected indentation of 2 spaces (indentation)",
-  },
-  Object {
-    "column": 1,
-    "endColumn": 11,
-    "endLine": 6,
-    "line": 6,
-    "rule": "indentation",
-    "severity": "error",
-    "text": "Expected indentation of 4 spaces (indentation)",
-  },
-]
-`;
+exports[`Integration with stylelint stylelint with html lang-postcss.vue 1`] = `Array []`;
 
 exports[`Integration with stylelint stylelint with html test.html 1`] = `
 Array [
   Object {
-    "column": 38,
+    "column": 34,
     "endColumn": 39,
     "endLine": 11,
+    "fix": undefined,
     "line": 11,
-    "rule": "declaration-block-trailing-semicolon",
+    "rule": "declaration-property-value-no-unknown",
     "severity": "error",
-    "text": "Expected a trailing semicolon (declaration-block-trailing-semicolon)",
+    "text": "Unknown value \\"serif\\" for property \\"font-family\\" (declaration-property-value-no-unknown)",
+    "url": undefined,
+  },
+  Object {
+    "column": 28,
+    "endColumn": 39,
+    "endLine": 11,
+    "fix": undefined,
+    "line": 11,
+    "rule": "font-family-name-quotes",
+    "severity": "error",
+    "text": "Expected quotes around \\"serif serif\\" (font-family-name-quotes)",
+    "url": undefined,
   },
   Object {
     "column": 28,
     "endColumn": 33,
     "endLine": 11,
+    "fix": undefined,
     "line": 11,
     "rule": "font-family-no-missing-generic-family-keyword",
     "severity": "error",
-    "text": "Unexpected missing generic font family (font-family-no-missing-generic-family-keyword)",
-  },
-  Object {
-    "column": 28,
-    "endColumn": 39,
-    "endLine": 11,
-    "line": 11,
-    "rule": "font-family-name-quotes",
-    "severity": "error",
-    "text": "Expected quotes around \\"serif serif\\" (font-family-name-quotes)",
-  },
-  Object {
-    "column": 4,
-    "endColumn": 5,
-    "endLine": 7,
-    "line": 5,
-    "rule": "indentation",
-    "severity": "error",
-    "text": "Expected indentation of 6 spaces (indentation)",
-  },
-  Object {
-    "column": 4,
-    "endColumn": 5,
-    "endLine": 7,
-    "line": 7,
-    "rule": "indentation",
-    "severity": "error",
-    "text": "Expected indentation of 6 spaces (indentation)",
-  },
-  Object {
-    "column": 5,
-    "endColumn": 19,
-    "endLine": 6,
-    "line": 6,
-    "rule": "indentation",
-    "severity": "error",
-    "text": "Expected indentation of 8 spaces (indentation)",
+    "text": "Missing generic font family (font-family-no-missing-generic-family-keyword)",
+    "url": undefined,
   },
 ]
 `;
@@ -215,66 +153,80 @@ exports[`Integration with stylelint stylelint with html test.vue 1`] = `
 Array [
   Object {
     "column": 10,
-    "endColumn": 16,
+    "endColumn": 29,
     "endLine": 37,
+    "fix": undefined,
     "line": 37,
-    "rule": "function-no-unknown",
+    "rule": "declaration-property-value-no-unknown",
     "severity": "error",
-    "text": "Unexpected unknown function \\"v-bind\\" (function-no-unknown)",
+    "text": "Unknown value \\"v-bind(buttonColor)\\" for property \\"color\\" (declaration-property-value-no-unknown)",
+    "url": undefined,
   },
   Object {
     "column": 19,
-    "endColumn": 25,
+    "endColumn": 60,
     "endLine": 38,
+    "fix": undefined,
     "line": 38,
-    "rule": "function-no-unknown",
+    "rule": "declaration-property-value-no-unknown",
     "severity": "error",
-    "text": "Unexpected unknown function \\"v-bind\\" (function-no-unknown)",
+    "text": "Unknown value \\"v-bind(\\"inputValue ? 'initial' : 'none'\\")\\" for property \\"pointer-events\\" (declaration-property-value-no-unknown)",
+    "url": undefined,
   },
   Object {
     "column": 1,
     "endColumn": 2,
     "endLine": 42,
+    "fix": undefined,
     "line": 40,
     "rule": "rule-empty-line-before",
     "severity": "error",
     "text": "Expected empty line before rule (rule-empty-line-before)",
+    "url": undefined,
   },
   Object {
     "column": 1,
     "endColumn": 2,
     "endLine": 45,
+    "fix": undefined,
     "line": 43,
     "rule": "rule-empty-line-before",
     "severity": "error",
     "text": "Expected empty line before rule (rule-empty-line-before)",
+    "url": undefined,
   },
   Object {
     "column": 1,
     "endColumn": 2,
     "endLine": 49,
+    "fix": undefined,
     "line": 46,
     "rule": "rule-empty-line-before",
     "severity": "error",
     "text": "Expected empty line before rule (rule-empty-line-before)",
+    "url": undefined,
   },
   Object {
     "column": 1,
     "endColumn": 17,
     "endLine": 46,
+    "fix": undefined,
     "line": 46,
     "rule": "selector-class-pattern",
     "severity": "error",
-    "text": "Expected class selector to be kebab-case",
+    "text": "Expected class selector \\".todo-item--done\\" to be kebab-case (selector-class-pattern)",
+    "url": undefined,
   },
   Object {
     "column": 17,
-    "endColumn": 18,
+    "endColumn": 28,
     "endLine": 37,
+    "fix": undefined,
     "line": 37,
     "rule": "value-keyword-case",
     "severity": "error",
     "text": "Expected \\"buttonColor\\" to be \\"buttoncolor\\" (value-keyword-case)",
+    "url": undefined,
   },
 ]
 `;
@@ -283,138 +235,25 @@ exports[`Integration with stylelint stylelint with html test-with-stylus.vue 1`]
 Array [
   Object {
     "column": 1,
-    "endColumn": 2,
-    "endLine": 9,
-    "line": 9,
-    "rule": "block-closing-brace-newline-before",
-    "severity": "error",
-    "text": "Expected newline before \\"}\\" of a multi-line block (block-closing-brace-newline-before)",
-  },
-  Object {
-    "column": 4,
-    "endColumn": 5,
-    "endLine": 17,
-    "line": 17,
-    "rule": "block-closing-brace-newline-before",
-    "severity": "error",
-    "text": "Expected newline before \\"}\\" of a multi-line block (block-closing-brace-newline-before)",
-  },
-  Object {
-    "column": 11,
-    "endColumn": 12,
-    "endLine": 7,
-    "line": 7,
-    "rule": "block-opening-brace-space-before",
-    "severity": "error",
-    "text": "Expected single space before \\"{\\" (block-opening-brace-space-before)",
-  },
-  Object {
-    "column": 10,
-    "endColumn": 11,
-    "endLine": 9,
-    "line": 9,
-    "rule": "block-opening-brace-space-before",
-    "severity": "error",
-    "text": "Expected single space before \\"{\\" (block-opening-brace-space-before)",
-  },
-  Object {
-    "column": 27,
-    "endColumn": 28,
-    "endLine": 2,
-    "line": 2,
-    "rule": "declaration-block-trailing-semicolon",
-    "severity": "error",
-    "text": "Expected a trailing semicolon (declaration-block-trailing-semicolon)",
-  },
-  Object {
-    "column": 14,
-    "endColumn": 1,
-    "endLine": 9,
-    "line": 8,
-    "rule": "declaration-block-trailing-semicolon",
-    "severity": "error",
-    "text": "Expected a trailing semicolon (declaration-block-trailing-semicolon)",
-  },
-  Object {
-    "column": 1,
     "endColumn": 6,
     "endLine": 16,
+    "fix": undefined,
     "line": 9,
     "rule": "rule-empty-line-before",
     "severity": "error",
     "text": "Expected empty line before rule (rule-empty-line-before)",
+    "url": undefined,
   },
   Object {
     "column": 5,
     "endColumn": 21,
     "endLine": 13,
+    "fix": undefined,
     "line": 13,
     "rule": "selector-class-pattern",
     "severity": "error",
-    "text": "Expected class selector to be kebab-case",
-  },
-  Object {
-    "column": 5,
-    "endColumn": 14,
-    "endLine": 8,
-    "line": 8,
-    "rule": "indentation",
-    "severity": "error",
-    "text": "Expected indentation of 2 spaces (indentation)",
-  },
-  Object {
-    "column": 5,
-    "endColumn": 20,
-    "endLine": 10,
-    "line": 10,
-    "rule": "indentation",
-    "severity": "error",
-    "text": "Expected indentation of 2 spaces (indentation)",
-  },
-  Object {
-    "column": 5,
-    "endColumn": 26,
-    "endLine": 11,
-    "line": 11,
-    "rule": "indentation",
-    "severity": "error",
-    "text": "Expected indentation of 2 spaces (indentation)",
-  },
-  Object {
-    "column": 5,
-    "endColumn": 6,
-    "endLine": 16,
-    "line": 13,
-    "rule": "indentation",
-    "severity": "error",
-    "text": "Expected indentation of 2 spaces (indentation)",
-  },
-  Object {
-    "column": 5,
-    "endColumn": 6,
-    "endLine": 16,
-    "line": 16,
-    "rule": "indentation",
-    "severity": "error",
-    "text": "Expected indentation of 2 spaces (indentation)",
-  },
-  Object {
-    "column": 9,
-    "endColumn": 35,
-    "endLine": 14,
-    "line": 14,
-    "rule": "indentation",
-    "severity": "error",
-    "text": "Expected indentation of 4 spaces (indentation)",
-  },
-  Object {
-    "column": 9,
-    "endColumn": 21,
-    "endLine": 15,
-    "line": 15,
-    "rule": "indentation",
-    "severity": "error",
-    "text": "Expected indentation of 4 spaces (indentation)",
+    "text": "Expected class selector \\".todo-item--done\\" to be kebab-case (selector-class-pattern)",
+    "url": undefined,
   },
 ]
 `;

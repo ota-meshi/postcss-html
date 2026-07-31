@@ -4,8 +4,8 @@
 
 module.exports = {
 	parserOptions: {
-		sourceType: "script",
-		ecmaVersion: 2020,
+		sourceType: "module",
+		ecmaVersion: 2022,
 	},
 	env: {
 		node: true,
@@ -40,6 +40,15 @@ module.exports = {
 			rules: {
 				"require-jsdoc": "off",
 				"no-console": "off",
+			},
+		},
+		{
+			files: ["*.cjs", "**/*.cjs"],
+			env: {
+				commonjs: true,
+			},
+			parserOptions: {
+				sourceType: "script",
 			},
 		},
 	],

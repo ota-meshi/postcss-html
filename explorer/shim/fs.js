@@ -1,3 +1,5 @@
+"use strict";
+
 const fs = {};
 module.exports = new Proxy(fs, {
 	get(_t, p) {

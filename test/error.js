@@ -1,8 +1,6 @@
-"use strict";
-
-const path = require("path");
-const expect = require("chai").expect;
-const syntax = require("../");
+import { fileURLToPath } from "node:url";
+import { expect } from "chai";
+import syntax from "postcss-html";
 
 describe("error tests", () => {
 	it("require error", () => {
@@ -13,7 +11,7 @@ describe("error tests", () => {
 			"</style>",
 		].join("\n");
 		const parser = syntax({
-			foo: path.join(__dirname, "./error-test-module.txt"),
+			foo: fileURLToPath(new URL("./error-test-module.txt", import.meta.url)),
 		});
 		expect(() =>
 			parser.parse(html, {

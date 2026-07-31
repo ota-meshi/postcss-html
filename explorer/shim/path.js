@@ -1,3 +1,5 @@
+"use strict";
+
 const path = {
 	sep: "/",
 	join(...args) {

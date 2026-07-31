@@ -28,6 +28,8 @@ First thing's first, install the module:
 npm install postcss-html --save-dev
 ```
 
+postcss-html is an ES module and requires Node.js `^22.12 || >=24`. CommonJS consumers on those Node.js versions can still load it with `require("postcss-html")`.
+
 If you want support SCSS/SASS/LESS/SugarSS syntax, you need to install the corresponding module.
 
 - SCSS: [postcss-scss](https://github.com/postcss/postcss-scss)
@@ -39,14 +41,19 @@ If you want support SCSS/SASS/LESS/SugarSS syntax, you need to install the corre
 ## Use Cases
 
 ```js
-const postcss = require('postcss');
-const syntax = require('postcss-html')({
+import postcss from 'postcss';
+import postcssHtml from 'postcss-html';
+import postcssScss from 'postcss-scss';
+import postcssLess from 'postcss-less';
+import postcssSafeParser from 'postcss-safe-parser';
+
+const syntax = postcssHtml({
     // syntax for parse scss (non-required options)
-    scss: require('postcss-scss'),
+    scss: postcssScss,
     // syntax for parse less (non-required options)
-    less: require('postcss-less'),
+    less: postcssLess,
     // syntax for parse css blocks (non-required options)
-    css: require('postcss-safe-parser'),
+    css: postcssSafeParser,
 });
 postcss(plugins).process(source, { syntax: syntax }).then(function (result) {
     // An alias for the result.css property. Use it with syntaxes that generate non-CSS output.
@@ -67,6 +74,11 @@ If you want support SCSS/SASS/LESS/SugarSS syntax, you need to install these mod
 ### Options
 
 ```js
+import postcssHtml from 'postcss-html';
+import postcssSass from 'postcss-sass';
+import sugarss from 'sugarss';
+import postcssCustomSyntax from 'postcss-custom-syntax';
+
 const options = {
     rules: [
         {
@@ -84,17 +96,17 @@ const options = {
     // custom parser for CSS (using `postcss-safe-parser`)
     css: 'postcss-safe-parser',
     // custom parser for SASS (PostCSS-compatible syntax.)
-    sass: require('postcss-sass'),
+    sass: postcssSass,
     // custom parser for SCSS (by module name)
     scss: 'postcss-scss',
     // custom parser for LESS (by module path)
-    less: require.resolve('./node_modules/postcss-less'),
+    less: './node_modules/postcss-less',
     // custom parser for SugarSS
-    sugarss: require('sugarss'),
+    sugarss: sugarss,
     // custom parser for custom language
-    custom: require('postcss-custom-syntax'),
+    custom: postcssCustomSyntax,
 }
-const syntax = require('postcss-html')(options);
+const syntax = postcssHtml(options);
 ```
 
 ## Turning PostCSS off from within your HTML

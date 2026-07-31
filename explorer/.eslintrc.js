@@ -1,3 +1,5 @@
+"use strict";
+
 module.exports = {
 	parserOptions: {
 		sourceType: "module",
@@ -19,4 +21,27 @@ module.exports = {
 		complexity: "off",
 		"no-console": "off",
 	},
+	overrides: [
+		{
+			files: [
+				".eslintrc.js",
+				"babel.config.js",
+				"vue.config.js",
+				"shim/**/*.js",
+			],
+			env: {
+				commonjs: true,
+			},
+			globals: {
+				__dirname: "readonly",
+				__filename: "readonly",
+				exports: "writable",
+				module: "readonly",
+				require: "readonly",
+			},
+			parserOptions: {
+				sourceType: "script",
+			},
+		},
+	],
 };
