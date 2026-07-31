@@ -1,10 +1,10 @@
 import { fileURLToPath } from "node:url";
-import chai from "chai";
+import { expect, use } from "chai";
 import { jestSnapshotPlugin } from "mocha-chai-jest-snapshot";
 import syntax from "postcss-html";
 import { listupFixtures } from "./utils.js";
 
-chai.use(jestSnapshotPlugin());
+use(jestSnapshotPlugin());
 
 const AST_FIXTURE_ROOT = fileURLToPath(
 	new URL("../test-fixtures/ast", import.meta.url),
@@ -27,13 +27,13 @@ describe("AST tests", () => {
 						});
 					}
 				}
-				chai.expect(document).toMatchSnapshot();
+				expect(document).toMatchSnapshot();
 			});
 			it("toString", () => {
 				const document = syntax.parse(content, {
 					from: `/${filename}`,
 				});
-				chai.expect(document.toString()).equal(content);
+				expect(document.toString()).equal(content);
 			});
 		});
 	}

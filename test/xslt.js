@@ -1,8 +1,6 @@
-import chai from "chai";
+import { expect } from "chai";
 import postcss from "postcss";
 import syntax from "postcss-html";
-
-const expect = chai.expect;
 
 describe("XSLT tests", () => {
 	// https://msdn.microsoft.com/en-us/library/ms764661(v=vs.85).aspx

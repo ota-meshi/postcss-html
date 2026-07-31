@@ -1,7 +1,5 @@
-import chai from "chai";
+import { expect } from "chai";
 import syntax from "postcss-html";
-
-const expect = chai.expect;
 
 describe("html tests", () => {
 	it("style tag in disable block", () => {

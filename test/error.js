@@ -1,8 +1,6 @@
 import { fileURLToPath } from "node:url";
-import chai from "chai";
+import { expect } from "chai";
 import syntax from "postcss-html";
-
-const expect = chai.expect;
 
 describe("error tests", () => {
 	it("require error", () => {

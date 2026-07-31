@@ -1,8 +1,6 @@
-import chai from "chai";
+import { expect } from "chai";
 import postcss from "postcss";
 import syntax from "postcss-html";
-
-const expect = chai.expect;
 
 describe("API", () => {
 	const html = [

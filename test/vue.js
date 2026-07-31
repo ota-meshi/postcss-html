@@ -1,9 +1,7 @@
 import autoprefixer from "autoprefixer";
-import chai from "chai";
+import { expect } from "chai";
 import postcss from "postcss";
 import postcssHtml from "postcss-html";
-
-const expect = chai.expect;
 const syntax = postcssHtml();
 
 describe("vue tests", () => {

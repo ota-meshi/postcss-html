@@ -1,7 +1,5 @@
-import chai from "chai";
+import { expect } from "chai";
 import syntax from "postcss-html";
-
-const expect = chai.expect;
 
 describe("template interpolation", () => {
 	it("PHP", () => {
