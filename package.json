@@ -72,7 +72,7 @@
     "postcss-safe-parser": "^7.0.1"
   },
   "devDependencies": {
-    "@ota-meshi/eslint-plugin": "^0.15.0",
+    "@ota-meshi/eslint-plugin": "^0.20.0",
     "autoprefixer": "^10.3.7",
     "c8": "^10.0.0",
     "chai": "~6.2.0",
