@@ -96,7 +96,11 @@ input {
         "semicolon": false,
       },
       "source": Object {
-        "end": undefined,
+        "end": Object {
+          "column": 78,
+          "line": 8,
+          "offset": 195,
+        },
         "inputId": 1,
         "start": Object {
           "column": 63,
@@ -141,7 +145,11 @@ input {
         "semicolon": false,
       },
       "source": Object {
-        "end": undefined,
+        "end": Object {
+          "column": 87,
+          "line": 9,
+          "offset": 284,
+        },
         "inputId": 2,
         "start": Object {
           "column": 72,
@@ -186,7 +194,11 @@ input {
         "semicolon": false,
       },
       "source": Object {
-        "end": undefined,
+        "end": Object {
+          "column": 76,
+          "line": 10,
+          "offset": 362,
+        },
         "inputId": 3,
         "start": Object {
           "column": 61,
@@ -231,7 +243,11 @@ input {
         "semicolon": false,
       },
       "source": Object {
-        "end": undefined,
+        "end": Object {
+          "column": 82,
+          "line": 11,
+          "offset": 446,
+        },
         "inputId": 4,
         "start": Object {
           "column": 67,
@@ -1865,7 +1881,11 @@ Object {
         "semicolon": true,
       },
       "source": Object {
-        "end": undefined,
+        "end": Object {
+          "column": 50,
+          "line": 5,
+          "offset": 137,
+        },
         "inputId": 1,
         "start": Object {
           "column": 11,
@@ -1912,7 +1932,11 @@ Object {
         "semicolon": false,
       },
       "source": Object {
-        "end": undefined,
+        "end": Object {
+          "column": 25,
+          "line": 6,
+          "offset": 188,
+        },
         "inputId": 2,
         "start": Object {
           "column": 11,
@@ -2408,7 +2432,11 @@ Object {
         "semicolon": true,
       },
       "source": Object {
-        "end": undefined,
+        "end": Object {
+          "column": 41,
+          "line": 6,
+          "offset": 174,
+        },
         "inputId": 1,
         "start": Object {
           "column": 11,
