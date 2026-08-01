@@ -3,24 +3,30 @@
 </template>
 
 <script>
-const monacoScript = Array.from(
-	window.document.head.querySelectorAll("script"),
-).find((script) => script.src && script.src.includes("monaco"));
-window.require.config({
-	paths: {
-		vs: monacoScript.src.replace(/\/vs\/.*$/u, "/vs"),
+import * as monaco from "monaco-editor";
+
+self.MonacoEnvironment = {
+	getWorker(_workerId, label) {
+		if (label === "json") {
+			return new Worker(
+				new URL("monaco-editor/language/json/json.worker.js", import.meta.url),
+			);
+		}
+		if (label === "html") {
+			return new Worker(
+				new URL("monaco-editor/language/html/html.worker.js", import.meta.url),
+			);
+		}
+		if (label === "css") {
+			return new Worker(
+				new URL("monaco-editor/language/css/css.worker.js", import.meta.url),
+			);
+		}
+		return new Worker(
+			new URL("monaco-editor/editor/editor.worker.js", import.meta.url),
+		);
 	},
-	"vs/nls": {
-		availableLanguages: {
-			"*": "ja",
-		},
-	},
-});
-const editorLoaded = new Promise((resolve) => {
-	window.require(["vs/editor/editor.main"], (r) => {
-		resolve(r);
-	});
-});
+};
 export default {
 	name: "MonacoEditor",
 	props: {
@@ -45,8 +51,7 @@ export default {
 			}
 		},
 	},
-	async mounted() {
-		const monaco = await editorLoaded;
+	mounted() {
 		const vm = this;
 		const options = Object.assign(
 			{
@@ -82,7 +87,7 @@ export default {
 		vm.editor.onDidFocusEditorText((evt) => {
 			vm.$emit("focusEditorText", evt);
 		});
-		monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
+		monaco.json.jsonDefaults.setDiagnosticsOptions({
 			validate: false,
 		});
 	},

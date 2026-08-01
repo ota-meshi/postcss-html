@@ -40,7 +40,7 @@ export default [
 		},
 	},
 	{
-		// The explorer is a browser app bundled by webpack, and a sub-project
+		// The explorer is a browser app bundled by vite, and a sub-project
 		// with its own package.json whose dependencies are not installed by
 		// the root `npm install`.
 		files: ["explorer/**"],
@@ -59,7 +59,7 @@ export default [
 	{
 		// eslint-plugin-vue's setup config sets `sourceType: "module"` for all
 		// files, so set the CommonJS files back.
-		files: ["**/*.cjs", "explorer/*.js", "explorer/shim/**/*.js"],
+		files: ["**/*.cjs"],
 		languageOptions: {
 			sourceType: "commonjs",
 			globals: {

@@ -1,5 +1,5 @@
-"use strict";
+export function createRequire() {
+	return () => null;
+}
 
-module.exports = {
-	createRequire: () => () => null,
-};
+export default { createRequire };

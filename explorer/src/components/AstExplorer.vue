@@ -27,7 +27,7 @@
 <script>
 import MonacoEditor from "./MonacoEditor.vue";
 import AstOptions from "./AstOptions.vue";
-import * as postCssHTML from "../../..";
+import postCssHTML from "../../..";
 import { deserializeState, serializeState } from "./scripts/state";
 
 export default {

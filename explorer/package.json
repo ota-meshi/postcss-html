@@ -2,24 +2,18 @@
   "name": "postcss-html-ast-explorer",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "serve": "vite",
+    "build": "vite build"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "@vue/compiler-sfc": "^3.0.0",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "monaco-editor": "^0.56.0",
     "pako": "^2.0.4",
-    "webpack": "^5.109.2"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "vite": "^8.2.0"
+  }
 }
