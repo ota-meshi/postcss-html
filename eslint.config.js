@@ -40,6 +40,15 @@ export default [
 		},
 	},
 	{
+		// The explorer is a sub-project with its own package.json whose
+		// dependencies are not installed by the root `npm install`.
+		files: ["explorer/**"],
+		rules: {
+			"n/no-missing-import": "off",
+			"n/no-missing-require": "off",
+		},
+	},
+	{
 		// eslint-plugin-vue's setup config sets `sourceType: "module"` for all
 		// files, so set the CommonJS files back.
 		files: ["**/*.cjs", "explorer/*.js", "explorer/shim/**/*.js"],
