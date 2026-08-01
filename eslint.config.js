@@ -40,12 +40,20 @@ export default [
 		},
 	},
 	{
-		// The explorer is a sub-project with its own package.json whose
-		// dependencies are not installed by the root `npm install`.
+		// The explorer is a browser app bundled by webpack, and a sub-project
+		// with its own package.json whose dependencies are not installed by
+		// the root `npm install`.
 		files: ["explorer/**"],
 		rules: {
+			"n/no-unsupported-features/es-syntax": "off",
+			"n/no-unsupported-features/node-builtins": "off",
 			"n/no-missing-import": "off",
 			"n/no-missing-require": "off",
+			"n/no-extraneous-require": "off",
+			"n/no-unpublished-import": "off",
+			"n/no-unpublished-require": "off",
+			complexity: "off",
+			"no-console": "off",
 		},
 	},
 	{
