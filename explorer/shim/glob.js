@@ -1,7 +1,6 @@
-"use strict";
-
 const glob = {};
-module.exports = new Proxy(glob, {
+
+export default new Proxy(glob, {
 	get(_t, p) {
 		if (!glob[p]) {
 			console.log(p);

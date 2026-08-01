@@ -1,12 +1,11 @@
-"use strict";
-
 const path = {
 	sep: "/",
 	join(...args) {
 		return args.join("/");
 	},
 };
-module.exports = new Proxy(path, {
+
+export default new Proxy(path, {
 	get(_t, p) {
 		if (!path[p]) {
 			console.log(p);

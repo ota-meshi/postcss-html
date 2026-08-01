@@ -1,4 +1,4 @@
-import pako from "pako";
+import { inflate } from "pako";
 
 /**
  * Deserialize a given serialized string then update this object.
@@ -17,7 +17,7 @@ export function deserializeState(serializedString) {
 
 	try {
 		const compressedString = window.atob(serializedString);
-		const uint8Arr = pako.inflate(
+		const uint8Arr = inflate(
 			Uint8Array.from(compressedString, (c) => c.charCodeAt(0)),
 		);
 
