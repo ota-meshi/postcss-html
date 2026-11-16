@@ -383,6 +383,73 @@ describe("html tests", () => {
 		expect(document.first.source.start.column).to.equal(8);
 	});
 
+	it("reports the same positions for every line terminator", () => {
+		// `\r\n` is two characters while `\n` is one. The first column of every
+		// line after a terminator used to shift, so the same document reported
+		// different columns depending on which line ending it used.
+		const positions = {};
+		// Lone `\r` is deliberately not covered: the style content is extracted
+		// with its terminators collapsed, which collapses the reported lines too.
+		for (const lineBreak of ["\n", "\r\n"]) {
+			const html = [
+				"<html>",
+				"<body>",
+				"<style>",
+				"a {}",
+				"b {}",
+				"</style>",
+				"</body>",
+				"</html>",
+			].join(lineBreak);
+			const document = syntax.parse(html, {
+				from: `line_break_${JSON.stringify(lineBreak)}.html`,
+			});
+
+			expect(document.nodes).to.be.lengthOf(1);
+			const root = document.first;
+			const label = `line break ${JSON.stringify(lineBreak)}`;
+			expect(root.nodes, label).to.be.lengthOf(2);
+			expect(document.toString(), label).equal(html);
+
+			// Positions must not depend on the terminator's length, so compare
+			// each node's location to the style block's own start rather than to
+			// the line numbers of the surrounding HTML.
+			positions[lineBreak] = [root, ...root.nodes].map((node) => [
+				node.source.start.line - root.source.start.line,
+				node.source.start.column - root.source.start.column,
+			]);
+		}
+
+		expect(positions).to.deep.equal({
+			"\n": [
+				[0, 0],
+				[0, 0],
+				[1, 0],
+			],
+			"\r\n": [
+				[0, 0],
+				[0, 0],
+				[1, 0],
+			],
+		});
+	});
+
+	it("translates between an offset and a location consistently", () => {
+		const html = "<style>\r\n</style>";
+		const document = syntax.parse(html, {
+			from: "offset_round_trip.html",
+		});
+
+		// `</style>` starts at the offset the parser reports, and the location
+		// of that offset is the first column of line 2.
+		const start = document.first.source.start;
+		expect(html.slice(start.offset, start.offset + "</style>".length)).to.equal(
+			"</style>",
+		);
+		expect(start.line).to.equal(2);
+		expect(start.column).to.equal(1);
+	});
+
 	it("react inline styles", () => {
 		const html = `
 			<div style={divStyle}/>
