@@ -1,8 +1,9 @@
 <template>
 	<div class="ast-explorer-root">
 		<div class="ast-tools">
-			<span class="ast-tools__time">{{ time }}</span
-			><AstOptions v-model="options" />
+			<span class="ast-tools__time">{{ time }}</span><AstOptions
+				v-model="options"
+			/>
 		</div>
 		<div class="ast-explorer">
 			<MonacoEditor
